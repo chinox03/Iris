@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" fill="none" role="img" aria-label="Iris isotipo (mono)">
+  <title>Iris · monocromo</title>
+  <path d="M110 22 Q110 78 166 78" stroke="currentColor" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <path d="M198 110 Q142 110 142 166" stroke="currentColor" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <path d="M110 198 Q110 142 54 142" stroke="currentColor" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <path d="M22 110 Q78 110 78 54" stroke="currentColor" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <circle cx="110" cy="110" r="18" fill="currentColor"/>
+</svg>

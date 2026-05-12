@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Iris tenant icon">
+  <title>tenant</title>
+  <rect x="3" y="3" width="18" height="18" rx="2"/>
+    <path d="M9 9 H15 V15 H9z" fill="#5847E0" stroke="none"/>
+</svg>

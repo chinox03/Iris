@@ -1,0 +1,117 @@
+{
+  "name": "Iris Design Tokens",
+  "version": "1.0.0",
+  "color": {
+    "iris": {
+      "50":  "#F2F0FF",
+      "100": "#E2DEFF",
+      "200": "#C6BEFE",
+      "300": "#9D90FB",
+      "400": "#7868F2",
+      "500": "#5847E0",
+      "600": "#3F2EB8",
+      "700": "#2D1F8A",
+      "800": "#1F1660",
+      "900": "#110B3B"
+    },
+    "neutral": {
+      "ink":         "#0B0D12",
+      "ink-2":       "#14171F",
+      "ink-3":       "#1C2030",
+      "paper":       "#F7F6F2",
+      "paper-2":     "#EFEDE6",
+      "white":       "#FFFFFF",
+      "line":        "#E4E1D8",
+      "line-strong": "#C8C4B7",
+      "muted":       "#6B7080",
+      "muted-2":     "#9CA0AC",
+      "on-dark":     "#E8E7DF",
+      "on-dark-2":   "#9298A8"
+    },
+    "accent": {
+      "ember": "#E76A3E"
+    },
+    "state": {
+      "success":    "#0E6A3E",
+      "success-bg": "#E9F7EF",
+      "warning":    "#9A5B0E",
+      "warning-bg": "#FEF3E2",
+      "danger":     "#9C3717",
+      "danger-bg":  "#FFF1EE"
+    },
+    "tenant": {
+      "cerkana":    "#0D9B8A",
+      "sanrafael":  "#1E40AF",
+      "dentaid":    "#B8860B",
+      "matersalud": "#9D174D"
+    }
+  },
+  "font": {
+    "family": {
+      "sans":  "Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
+      "serif": "Newsreader, ui-serif, Georgia, serif",
+      "mono":  "'JetBrains Mono', ui-monospace, 'SF Mono', monospace"
+    },
+    "size": {
+      "display": "clamp(48px, 7vw, 104px)",
+      "h1":      "clamp(36px, 4.6vw, 64px)",
+      "h2":      "clamp(28px, 3.4vw, 44px)",
+      "h3":      "24px",
+      "h4":      "18px",
+      "body":    "15px",
+      "lead":    "21px",
+      "meta":    "11px",
+      "micro":   "10px"
+    },
+    "lineHeight": {
+      "tight":   0.96,
+      "snug":    1.15,
+      "base":    1.55,
+      "relaxed": 1.7
+    },
+    "letterSpacing": {
+      "tight": "-0.04em",
+      "snug":  "-0.02em",
+      "base":  "-0.005em",
+      "meta":  "0.12em",
+      "mono":  "0.14em"
+    }
+  },
+  "radius": {
+    "xs":   "6px",
+    "sm":   "10px",
+    "md":   "14px",
+    "lg":   "20px",
+    "xl":   "28px",
+    "pill": "999px"
+  },
+  "shadow": {
+    "1":    "0 1px 0 rgba(11,13,18,.04), 0 1px 2px rgba(11,13,18,.04)",
+    "2":    "0 6px 24px -8px rgba(11,13,18,.18), 0 2px 6px rgba(11,13,18,.06)",
+    "3":    "0 30px 60px -20px rgba(11,13,18,.35)",
+    "iris": "0 18px 40px -22px rgba(88,71,224,.35)"
+  },
+  "spacing": {
+    "1":  "4px",
+    "2":  "8px",
+    "3":  "12px",
+    "4":  "16px",
+    "5":  "24px",
+    "6":  "32px",
+    "7":  "48px",
+    "8":  "64px",
+    "9":  "96px",
+    "10": "120px"
+  },
+  "motion": {
+    "ease": {
+      "out":    "cubic-bezier(0.16, 1, 0.3, 1)",
+      "inOut":  "cubic-bezier(0.65, 0, 0.35, 1)"
+    },
+    "duration": {
+      "fast": "180ms",
+      "base": "280ms",
+      "slow": "600ms"
+    }
+  }
+}

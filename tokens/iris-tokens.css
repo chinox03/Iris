@@ -1,0 +1,131 @@
+/* =========================================================
+   IRIS · Design Tokens
+   Paraguas whitelabel · telemedicina
+   v1.0 · May 2026
+   ========================================================= */
+
+:root {
+  /* ---------- Color · Iris primary scale ---------- */
+  --iris-50:  #F2F0FF;
+  --iris-100: #E2DEFF;
+  --iris-200: #C6BEFE;
+  --iris-300: #9D90FB;
+  --iris-400: #7868F2;
+  --iris-500: #5847E0;   /* primary · isotipo, CTA */
+  --iris-600: #3F2EB8;
+  --iris-700: #2D1F8A;
+  --iris-800: #1F1660;
+  --iris-900: #110B3B;
+
+  /* ---------- Color · neutros ---------- */
+  --ink:        #0B0D12;   /* texto base · trazo principal */
+  --ink-2:      #14171F;
+  --ink-3:      #1C2030;
+  --paper:      #F7F6F2;   /* fondo cálido · brand book */
+  --paper-2:    #EFEDE6;
+  --white:      #FFFFFF;   /* fondo producto · UI */
+  --line:       #E4E1D8;
+  --line-strong:#C8C4B7;
+  --muted:      #6B7080;
+  --muted-2:    #9CA0AC;
+  --on-dark:    #E8E7DF;   /* texto sobre ink */
+  --on-dark-2:  #9298A8;
+
+  /* ---------- Color · acento ---------- */
+  --ember: #E76A3E;        /* único punto cálido — usar con moderación */
+
+  /* ---------- Color · estados ---------- */
+  --success: #0E6A3E;
+  --success-bg: #E9F7EF;
+  --warning: #9A5B0E;
+  --warning-bg: #FEF3E2;
+  --danger:  #9C3717;
+  --danger-bg:  #FFF1EE;
+
+  /* ---------- Color · tenants (whitelabel) ---------- */
+  --tenant-cerkana:    #0D9B8A;
+  --tenant-sanrafael:  #1E40AF;
+  --tenant-dentaid:    #B8860B;
+  --tenant-matersalud: #9D174D;
+
+  /* Override-able por tenant: setear en :root[data-tenant="X"] */
+  --iris-tenant-color: var(--iris-500);
+
+  /* ---------- Tipografía ---------- */
+  --font-sans:  "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --font-serif: "Newsreader", ui-serif, Georgia, serif;
+  --font-mono:  "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  /* Escala tipográfica · responsive */
+  --fs-display: clamp(48px, 7vw, 104px);   /* H1 hero */
+  --fs-h1:      clamp(36px, 4.6vw, 64px);
+  --fs-h2:      clamp(28px, 3.4vw, 44px);
+  --fs-h3:      24px;
+  --fs-h4:      18px;
+  --fs-body:    15px;
+  --fs-lead:    21px;
+  --fs-meta:    11px;       /* mono labels */
+  --fs-micro:   10px;
+
+  --lh-tight:   0.96;
+  --lh-snug:    1.15;
+  --lh-base:    1.55;
+  --lh-relaxed: 1.7;
+
+  --ls-tight:   -0.04em;
+  --ls-snug:    -0.02em;
+  --ls-base:    -0.005em;
+  --ls-meta:    0.12em;
+  --ls-mono:    0.14em;
+
+  /* ---------- Radius ---------- */
+  --r-xs:   6px;
+  --r-sm:   10px;
+  --r-md:   14px;
+  --r-lg:   20px;
+  --r-xl:   28px;
+  --r-pill: 999px;
+
+  /* ---------- Shadows ---------- */
+  --sh-1: 0 1px 0 rgba(11,13,18,.04), 0 1px 2px rgba(11,13,18,.04);
+  --sh-2: 0 6px 24px -8px rgba(11,13,18,.18), 0 2px 6px rgba(11,13,18,.06);
+  --sh-3: 0 30px 60px -20px rgba(11,13,18,.35);
+  --sh-iris: 0 18px 40px -22px rgba(88,71,224,.35);
+
+  /* ---------- Spacing ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 120px;
+
+  /* ---------- Motion ---------- */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:    180ms;
+  --dur-base:    280ms;
+  --dur-slow:    600ms;
+
+  /* ---------- Z-index ---------- */
+  --z-base:    0;
+  --z-sticky:  50;
+  --z-overlay: 100;
+  --z-modal:   200;
+  --z-toast:   300;
+}
+
+/* ---------- Tenant overrides ---------- */
+:root[data-tenant="cerkana"]    { --iris-tenant-color: var(--tenant-cerkana); }
+:root[data-tenant="sanrafael"]  { --iris-tenant-color: var(--tenant-sanrafael); }
+:root[data-tenant="dentaid"]    { --iris-tenant-color: var(--tenant-dentaid); }
+:root[data-tenant="matersalud"] { --iris-tenant-color: var(--tenant-matersalud); }
+
+/* ---------- Dark mode hints (opcional) ----------
+   Iris no es dark-first; el ink-bg sirve para hero, login derecha,
+   manifesto y avatars. Si tu app necesita dark mode completo, mapear
+   --paper → --ink y --ink → --on-dark en :root.dark               */

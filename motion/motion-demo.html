@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Iris · Motion Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../tokens/iris-tokens.css" />
+<link rel="stylesheet" href="iris-motion.css" />
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--font-sans);background:var(--paper);color:var(--ink);padding:48px 24px}
+  .wrap{max-width:1100px;margin:0 auto}
+  header{margin-bottom:40px}
+  h1{font-size:48px;letter-spacing:-0.03em;font-weight:500;margin:0 0 8px}
+  h1 em{color:var(--iris-600);font-style:normal}
+  .sub{color:var(--muted);font-size:15px;max-width:60ch;line-height:1.5}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media (max-width:760px){.grid{grid-template-columns:1fr}}
+  .cell{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:32px;display:flex;flex-direction:column;gap:14px;min-height:340px;position:relative}
+  .cell.dark{background:var(--ink);color:var(--on-dark);border-color:var(--ink-3)}
+  .stage{flex:1;display:flex;align-items:center;justify-content:center;min-height:200px}
+  .stage svg{width:160px;height:160px}
+  .num{font-family:var(--font-mono);font-size:10px;letter-spacing:var(--ls-mono);text-transform:uppercase;color:var(--iris-600);position:absolute;top:18px;left:18px}
+  .cell.dark .num{color:var(--iris-300)}
+  .replay{position:absolute;top:14px;right:14px;background:rgba(0,0,0,.05);border:none;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-radius:6px;color:var(--muted);cursor:pointer}
+  .cell.dark .replay{background:rgba(255,255,255,.08);color:var(--on-dark-2)}
+  .replay:hover{background:rgba(0,0,0,.1)}
+  h4{font-size:20px;font-weight:500;letter-spacing:-0.02em;margin:0}
+  .cell.dark h4{color:#fff}
+  p{font-size:13.5px;color:#3A3F4C;margin:0;line-height:1.5}
+  .cell.dark p{color:#C8CAD3}
+  .meta{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Motion <em>Iris</em></h1>
+    <p class="sub">Las 6 animaciones canónicas del isotipo, en loop. Cada una tiene un uso específico — splash, idle, loading, demo whitelabel, signal AI, narrativo.</p>
+  </header>
+
+  <div class="grid">
+
+    <!-- M1 DRAW -->
+    <div class="cell">
+      <span class="num">M1 · splash / intro</span>
+      <button class="replay" data-target="m1">Replay</button>
+      <div class="stage">
+        <svg class="iris-motion-draw loop" id="m1" viewBox="0 0 220 220" fill="none">
+          <path class="iris-petal iris-p1" d="M110 22 Q110 78 166 78" stroke="#5847E0" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path class="iris-petal iris-p2" d="M198 110 Q142 110 142 166" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path class="iris-petal iris-p3" d="M110 198 Q110 142 54 142" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path class="iris-petal iris-p4" d="M22 110 Q78 110 78 54" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <circle class="iris-center" cx="110" cy="110" r="18" fill="#5847E0"/>
+        </svg>
+      </div>
+      <h4>Draw · la flor se forma</h4>
+      <p>Cuatro pétalos en cascada (300ms). El centro aparece al final.</p>
+      <div class="meta">1.6s · ease-out · splash / intro</div>
+    </div>
+
+    <!-- M2 BREATH -->
+    <div class="cell dark">
+      <span class="num">M2 · idle / marca viva</span>
+      <div class="stage">
+        <svg class="iris-motion-breath" viewBox="0 0 220 220" fill="none">
+          <g class="iris-grp">
+            <path d="M110 22 Q110 78 166 78" stroke="#9D90FB" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <path d="M198 110 Q142 110 142 166" stroke="#E8E7DF" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <path d="M110 198 Q110 142 54 142" stroke="#E8E7DF" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <path d="M22 110 Q78 110 78 54" stroke="#E8E7DF" stroke-width="16" stroke-linecap="round" fill="none"/>
+          </g>
+          <circle class="iris-center" cx="110" cy="110" r="18" fill="#9D90FB"/>
+        </svg>
+      </div>
+      <h4>Breath · respiración</h4>
+      <p>Escala ±6% en loop. Indica que el sistema está vivo sin agitar la pantalla.</p>
+      <div class="meta">loop · 3.5s · ease-in-out</div>
+    </div>
+
+    <!-- M3 ROTATE -->
+    <div class="cell">
+      <span class="num">M3 · loading largo</span>
+      <div class="stage">
+        <svg class="iris-motion-rotate" viewBox="0 0 220 220" fill="none">
+          <g class="iris-grp">
+            <path d="M110 22 Q110 78 166 78" stroke="#5847E0" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <path d="M198 110 Q142 110 142 166" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <path d="M110 198 Q110 142 54 142" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <path d="M22 110 Q78 110 78 54" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          </g>
+          <circle class="iris-center" cx="110" cy="110" r="18" fill="#5847E0"/>
+        </svg>
+      </div>
+      <h4>Rotate · lenta como reloj</h4>
+      <p>14s por vuelta — apenas perceptible. Para procesos largos: indexación, sync, export.</p>
+      <div class="meta">14s · 3s centro · linear</div>
+    </div>
+
+    <!-- M4 WHITELABEL -->
+    <div class="cell">
+      <span class="num">M4 · pitch / demo</span>
+      <div class="stage">
+        <svg class="iris-motion-whitelabel" viewBox="0 0 220 220" fill="none">
+          <path class="iris-p1" d="M110 22 Q110 78 166 78" stroke="#5847E0" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M198 110 Q142 110 142 166" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M110 198 Q110 142 54 142" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M22 110 Q78 110 78 54" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <circle class="iris-center" cx="110" cy="110" r="18" fill="#5847E0"/>
+        </svg>
+      </div>
+      <h4>Whitelabel · pétalo ciclando</h4>
+      <p>Iris → Cerkana → San Rafael → Dentaid. Cuenta la propuesta sola.</p>
+      <div class="meta">ciclo 8s · ease-in-out · loop</div>
+    </div>
+
+    <!-- M5 SIGNAL -->
+    <div class="cell">
+      <span class="num">M5 · "Aria está pensando"</span>
+      <div class="stage">
+        <svg class="iris-motion-signal" viewBox="0 0 220 220" fill="none">
+          <path class="iris-petal iris-p1" d="M110 22 Q110 78 166 78" stroke="#5847E0" stroke-width="14" stroke-linecap="round" fill="none"/>
+          <path class="iris-petal iris-p2" d="M198 110 Q142 110 142 166" stroke="#5847E0" stroke-width="14" stroke-linecap="round" fill="none"/>
+          <path class="iris-petal iris-p3" d="M110 198 Q110 142 54 142" stroke="#5847E0" stroke-width="14" stroke-linecap="round" fill="none"/>
+          <path class="iris-petal iris-p4" d="M22 110 Q78 110 78 54" stroke="#5847E0" stroke-width="14" stroke-linecap="round" fill="none"/>
+          <circle class="iris-center" cx="110" cy="110" r="14" fill="#5847E0"/>
+        </svg>
+      </div>
+      <h4>Signal · Aria escuchando</h4>
+      <p>Cascada de 150ms con centro pulsando. Indicador estándar de IA procesando.</p>
+      <div class="meta">2.2s · linear · loop</div>
+    </div>
+
+    <!-- M6 ORBIT -->
+    <div class="cell dark">
+      <span class="num">M6 · explainer · marketing</span>
+      <div class="stage">
+        <svg class="iris-motion-orbit" viewBox="0 0 240 240" fill="none">
+          <circle class="iris-ring" cx="120" cy="120" r="100" stroke="rgba(157,144,251,.18)" stroke-width="1" fill="none" stroke-dasharray="3 6"/>
+          <g>
+            <path d="M120 38 Q120 90 170 90" stroke="#9D90FB" stroke-width="14" stroke-linecap="round" fill="none"/>
+            <path d="M202 120 Q150 120 150 170" stroke="#E8E7DF" stroke-width="14" stroke-linecap="round" fill="none"/>
+            <path d="M120 202 Q120 150 70 150" stroke="#E8E7DF" stroke-width="14" stroke-linecap="round" fill="none"/>
+            <path d="M38 120 Q90 120 90 70" stroke="#E8E7DF" stroke-width="14" stroke-linecap="round" fill="none"/>
+            <circle cx="120" cy="120" r="16" fill="#9D90FB"/>
+          </g>
+          <g class="iris-satellite">
+            <circle cx="220" cy="120" r="5" fill="#9D90FB"/>
+          </g>
+        </svg>
+      </div>
+      <h4>Orbit · satélites del sistema</h4>
+      <p>Flor quieta + punto orbitando. Datos viajando por la red. Solo narrativo.</p>
+      <div class="meta">6s · linear · uso decorativo</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.replay').forEach(btn=>{
+  btn.addEventListener('click', e=>{
+    const el = document.getElementById(btn.dataset.target);
+    if(!el) return;
+    const cls = el.className.baseVal;
+    el.className.baseVal = '';
+    void el.getBoundingClientRect();
+    el.className.baseVal = cls;
+  });
+});
+</script>
+</body>
+</html>

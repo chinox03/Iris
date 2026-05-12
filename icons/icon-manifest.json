@@ -1,0 +1,36 @@
+{
+  "name": "Iris Icon Set",
+  "version": "1.0.0",
+  "grid": 24,
+  "stroke": 1.6,
+  "signature": {
+    "dot": "#5847E0",
+    "rule": "Cada icono lleva UNO de los dos elementos firma (dot indigo o cuarto de círculo), nunca ambos. Excepción: icon-iris (es el isotipo)."
+  },
+  "icons": [
+    { "name": "latido",       "signature": "dot",  "context": "signos vitales · ECG · monitoreo" },
+    { "name": "paciente",     "signature": "dot",  "context": "perfil del paciente · avatar genérico" },
+    { "name": "cuidado",      "signature": "dot",  "context": "consulta cubierta · check de cuidado" },
+    { "name": "videollamada", "signature": "dot",  "context": "consulta por video · cámara" },
+    { "name": "agenda",       "signature": "dot",  "context": "calendario · citas · agenda médica" },
+    { "name": "chat",         "signature": "dot",  "context": "mensajería con paciente · chat de soporte" },
+    { "name": "receta",       "signature": "petal","context": "prescripción digital firmada" },
+    { "name": "tablero",      "signature": "dot",  "context": "dashboard · vista general · admin" },
+    { "name": "mensaje",      "signature": "dot",  "context": "notificación · mensaje entrante" },
+    { "name": "hora",         "signature": "dot",  "context": "tiempo · espera · próximo turno" },
+    { "name": "llamada",      "signature": "dot",  "context": "llamada telefónica · contacto" },
+    { "name": "descargar",    "signature": "none", "context": "exportar · descargar PDF" },
+    { "name": "buscar",       "signature": "dot",  "context": "search · filtro · buscador" },
+    { "name": "confirmado",   "signature": "dot",  "context": "transacción confirmada · OK con check" },
+    { "name": "alerta",       "signature": "dot",  "context": "warning · atención requerida" },
+    { "name": "aprobado",     "signature": "petal","context": "aprobado por médico · review pasada" },
+    { "name": "soporte",      "signature": "petal","context": "soporte técnico · headset · ayuda" },
+    { "name": "medico",       "signature": "petal","context": "profesional médico · doctor" },
+    { "name": "clinica",      "signature": "dot",  "context": "institución · clínica · hospital" },
+    { "name": "tenant",       "signature": "dot",  "context": "tenant whitelabel · cliente" },
+    { "name": "config",       "signature": "none", "context": "ajustes · settings · engranaje" },
+    { "name": "check",        "signature": "dot",  "context": "completado · check sobre documento" },
+    { "name": "vitales",      "signature": "dot",  "context": "monitor de constantes · datos vitales" },
+    { "name": "iris",         "signature": "logo", "context": "isotipo Iris a tamaño icono · usar para link al producto" }
+  ]
+}

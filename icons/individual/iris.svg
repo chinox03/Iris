@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" role="img" aria-label="Iris iris icon">
+  <title>iris</title>
+  <path d="M16 4 Q16 13 24 13"/>
+    <path d="M28 16 Q19 16 19 24"/>
+    <path d="M16 28 Q16 19 8 19"/>
+    <path d="M4 16 Q13 16 13 8"/>
+    <circle cx="16" cy="16" r="3.2" fill="#5847E0" stroke="none"/>
+</svg>

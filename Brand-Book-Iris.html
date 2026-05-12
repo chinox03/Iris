@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Iris · Brand Book · plataforma whitelabel</title>
+<meta name="description" content="Brand book de Iris — paraguas whitelabel de telemedicina. Logo, color, tipografía, iconos, motion, voz, Aria.">
+
+<link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+<meta name="theme-color" content="#5847E0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="tokens/iris-tokens.css" />
+<link rel="stylesheet" href="motion/iris-motion.css" />
+
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  html{scroll-behavior:smooth}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--iris-200);color:var(--iris-900)}
+  img,svg{display:block}
+
+  .wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+  @media (max-width:760px){.wrap{padding:0 22px}}
+
+  /* ========= TOPBAR ========= */
+  .topbar{position:sticky;top:0;z-index:var(--z-sticky);background:rgba(247,246,242,.86);backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid rgba(11,13,18,.06)}
+  .topbar .row{display:flex;align-items:center;gap:28px;height:64px}
+  .tb-logo{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-0.02em;font-size:16px}
+  .tb-logo svg{width:24px;height:24px}
+  .tb-nav{display:flex;gap:22px;font-size:13.5px;color:#3A3F4C}
+  .tb-nav a:hover{color:var(--iris-600)}
+  .tb-spacer{flex:1}
+  .tb-meta{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  @media (max-width:880px){.tb-nav{display:none}}
+
+  /* ========= SECTIONS ========= */
+  section.block{padding:120px 0;border-bottom:1px solid var(--line)}
+  section.block.tight{padding:80px 0}
+  section.cream{background:var(--paper-2)}
+  section.dark{background:var(--ink);color:var(--on-dark);border-bottom-color:var(--ink-3)}
+  section.white{background:#fff}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--iris-500)}
+  section.dark .eyebrow{color:var(--on-dark-2)}
+  section.dark .eyebrow .dot{background:var(--iris-300)}
+
+  h1,h2,h3,h4{margin:0;letter-spacing:-0.02em;font-weight:500}
+  h1{font-size:clamp(48px,7vw,104px);line-height:.96;letter-spacing:-0.04em}
+  h2{font-size:clamp(32px,4.2vw,56px);line-height:1.02;letter-spacing:-0.03em}
+  h3{font-size:24px;line-height:1.2;letter-spacing:-0.015em;font-weight:600}
+  h4{font-size:18px;line-height:1.3;font-weight:600}
+  h1 em,h2 em,h3 em{font-family:var(--font-sans);font-style:normal;color:var(--iris-600)}
+  section.dark h1 em,section.dark h2 em{color:var(--iris-300)}
+
+  .lead{font-size:21px;line-height:1.45;color:#3A3F4C;max-width:680px;font-weight:400}
+  section.dark .lead{color:#B8BCCB}
+  .muted{color:var(--muted)}
+  .mono{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+  .section-head{margin-bottom:48px}
+  .section-head h2{margin-top:18px;max-width:20ch}
+  .section-head p{margin-top:18px;max-width:680px}
+
+  hr.sep{border:none;border-top:1px dashed var(--line);margin:48px 0}
+
+  /* ========= HERO ========= */
+  .hero{background:var(--ink);color:var(--on-dark);padding:140px 0 100px;position:relative;overflow:hidden;border-bottom:1px solid var(--ink-3)}
+  .hero::before{content:"";position:absolute;inset:auto -10% -40% -10%;height:80%;background:radial-gradient(60% 60% at 30% 50%,rgba(88,71,224,.4),transparent 70%),radial-gradient(50% 50% at 80% 80%,rgba(231,106,62,.14),transparent 70%);pointer-events:none}
+  .hero .wrap{position:relative}
+  .hero .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center}
+  @media (max-width:960px){.hero .grid{grid-template-columns:1fr;gap:48px}}
+  .hero h1{margin-top:32px;color:#F2F1EA;max-width:14ch}
+  .hero h1 em{color:var(--iris-300)}
+  .hero .lead{margin-top:28px;color:#B8BCCB;max-width:560px}
+  .hero .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px}
+  .hero .pill{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px;border-radius:var(--r-pill);border:1px solid rgba(255,255,255,.14);color:#C8CBD8}
+  .hero-mark{display:flex;align-items:center;justify-content:center;aspect-ratio:1;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:var(--r-xl);padding:48px}
+  .hero-mark svg{width:100%;max-width:280px;height:auto}
+
+  /* ========= CARDS ========= */
+  .grid{display:grid;gap:14px}
+  .grid.c2{grid-template-columns:repeat(2,1fr)}
+  .grid.c3{grid-template-columns:repeat(3,1fr)}
+  .grid.c4{grid-template-columns:repeat(4,1fr)}
+  @media (max-width:900px){.grid.c3,.grid.c4{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.grid.c2,.grid.c3,.grid.c4{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:24px;box-shadow:var(--sh-1)}
+  .card.dark{background:#14171F;border-color:#262A38;color:var(--on-dark)}
+  .card .h{font-weight:600;font-size:15px;letter-spacing:-0.01em;margin-bottom:6px}
+  .card .p{color:var(--muted);font-size:13.5px;line-height:1.5}
+  .card .num{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--iris-600);margin-bottom:8px}
+
+  /* ========= ARCHITECTURE STACK ========= */
+  .stack{display:grid;gap:14px;padding:32px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1)}
+  .stack .layer{display:flex;align-items:center;gap:18px;padding:22px 24px;border-radius:var(--r-md);border:1px dashed var(--line-strong);position:relative;flex-wrap:wrap}
+  .stack .layer.l-iris{background:linear-gradient(180deg,var(--iris-50),#fff);border-color:var(--iris-200)}
+  .stack .layer.l-tenant{background:#fff;border-style:solid;border-color:var(--line)}
+  .stack .layer.l-ai{background:#FFFBF7;border-color:#F2E0CF}
+  .stack .level{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);width:90px;flex-shrink:0}
+  .stack .name{font-weight:600;font-size:18px;letter-spacing:-0.015em}
+  .stack .desc{color:var(--muted);font-size:13.5px}
+  .stack .tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:var(--r-pill);background:var(--iris-100);color:var(--iris-700);margin-left:auto}
+  .stack .l-tenant .tag{background:#E9F4F0;color:#0D6A5F}
+  .stack .l-ai .tag{background:#FBE8D9;color:#9C3F12}
+
+  /* ========= PRINCIPLES ========= */
+  .princ{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+  @media (max-width:880px){.princ{grid-template-columns:repeat(2,1fr)}}
+  .p-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:24px;min-height:200px;display:flex;flex-direction:column}
+  .p-card .ic{width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .p-card .name{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--iris-600);margin-bottom:6px}
+  .p-card h4{font-size:18px;letter-spacing:-0.02em;font-weight:500;margin:0 0 8px;line-height:1.15}
+  .p-card p{font-size:13.5px;line-height:1.5;color:var(--muted);margin:0}
+
+  /* ========= LOGO LAB ========= */
+  .logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media (max-width:900px){.logo-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.logo-grid{grid-template-columns:1fr}}
+  .logo-tile{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:36px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;min-height:220px;gap:18px;position:relative}
+  .logo-tile.dark{background:var(--ink);color:var(--on-dark);border-color:var(--ink-3)}
+  .logo-tile.cerkana{background:#F2FBF9;border-color:#B4E2DA}
+  .logo-tile.sanrafael{background:#EFF4FE;border-color:#BCCBEF}
+  .logo-tile.dentaid{background:#FFF8E8;border-color:#EAD494}
+  .logo-tile svg.iso{width:100%;max-width:140px;height:auto}
+  .logo-tile .caption{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center;align-self:stretch;border-top:1px solid var(--line);padding-top:14px}
+  .logo-tile.dark .caption{color:var(--on-dark-2);border-top-color:rgba(255,255,255,.08)}
+
+  /* construction grid */
+  .construction{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:36px;display:flex;flex-direction:column;gap:18px}
+  .construction svg{width:100%;max-width:420px;margin:0 auto;height:auto}
+
+  /* ========= COLOR PALETTE ========= */
+  .palette{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;box-shadow:var(--sh-1)}
+  .palette .title{font-weight:600;font-size:18px;letter-spacing:-0.015em}
+  .palette .sub{color:var(--muted);font-size:13.5px;margin-top:4px}
+  .palette .strip{display:grid;grid-template-columns:repeat(10,1fr);gap:0;margin-top:20px;border-radius:var(--r-sm);overflow:hidden}
+  .palette .strip > div{aspect-ratio:1;display:flex;align-items:flex-end;justify-content:center;font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,.7);padding-bottom:6px}
+  .palette .strip > div.light-text{color:rgba(11,13,18,.55)}
+  .swatch-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px}
+  @media (max-width:760px){.swatch-row{grid-template-columns:repeat(2,1fr)}}
+  .swatch{position:relative;border-radius:var(--r-md);overflow:hidden;border:1px solid rgba(11,13,18,.06);min-height:96px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end}
+  .swatch .lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between;width:100%}
+  .swatch.dark .lbl{color:#fff}
+  .swatch.light .lbl{color:var(--ink)}
+
+  /* ========= TYPE ========= */
+  .type-sample{padding:32px;background:#fff;border:1px solid var(--line);border-radius:var(--r-md)}
+  .type-sample.dark{background:var(--ink);color:var(--on-dark);border-color:var(--ink-3)}
+  .t-display{font-size:clamp(48px,7vw,80px);line-height:.96;letter-spacing:-0.045em;font-weight:500}
+  .t-display em{font-family:var(--font-serif);font-style:italic;color:var(--iris-600)}
+  .type-sample.dark .t-display em{color:var(--iris-300)}
+  .t-h2{font-size:36px;line-height:1.05;letter-spacing:-0.025em;font-weight:500}
+  .t-body{font-size:17px;line-height:1.55;color:#3A3F4C;max-width:60ch}
+  .t-meta{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .t-row{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:14px 0;border-bottom:1px dashed var(--line);align-items:center}
+  .t-row:last-child{border-bottom:none}
+  .t-row .key{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+  /* ========= ICONS ========= */
+  .icon-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+  @media (max-width:900px){.icon-grid{grid-template-columns:repeat(4,1fr)}}
+  @media (max-width:560px){.icon-grid{grid-template-columns:repeat(3,1fr)}}
+  .icon-cell{background:#fff;padding:22px 12px;display:flex;flex-direction:column;align-items:center;gap:12px;min-height:96px}
+  .icon-cell svg{width:24px;height:24px;color:var(--ink);stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .icon-cell .lbl{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:center}
+
+  /* ========= MOTION ========= */
+  .motion-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+  @media (max-width:900px){.motion-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.motion-grid{grid-template-columns:1fr}}
+  .motion-cell{background:#FAFAF7;border:1px solid var(--line);border-radius:var(--r-md);padding:24px;display:flex;flex-direction:column;gap:12px;min-height:280px;position:relative}
+  .motion-cell.dark{background:var(--ink);border-color:var(--ink-3);color:var(--on-dark)}
+  .motion-cell .stage{flex:1;display:flex;align-items:center;justify-content:center;min-height:140px}
+  .motion-cell .stage svg{width:140px;height:140px}
+  .motion-cell .num{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--iris-600);position:absolute;top:14px;left:14px}
+  .motion-cell.dark .num{color:var(--iris-300)}
+  .motion-cell h4{font-size:16px;font-weight:500;letter-spacing:-0.015em;margin:0}
+  .motion-cell.dark h4{color:#fff}
+  .motion-cell p{font-size:12.5px;line-height:1.45;color:#3A3F4C;margin:0}
+  .motion-cell.dark p{color:#C8CAD3}
+  .motion-cell .meta{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+
+  /* ========= VOICE ========= */
+  .voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media (max-width:760px){.voice-grid{grid-template-columns:1fr}}
+  .voice-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:28px}
+  .voice-card .num{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;color:var(--iris-600);margin-bottom:6px}
+  .voice-card h4{font-size:20px;letter-spacing:-0.02em;font-weight:500;margin:0 0 8px}
+  .voice-card > p{font-size:14.5px;line-height:1.55;color:#3A3F4C;margin:0 0 16px}
+  .voice-card .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+  @media (max-width:560px){.voice-card .pair{grid-template-columns:1fr}}
+  .voice-card .si,.voice-card .no{padding:14px;border-radius:var(--r-sm);font-size:13px;line-height:1.45}
+  .voice-card .si{background:var(--iris-50);border:1px solid var(--iris-200);color:var(--iris-800)}
+  .voice-card .no{background:#FAFAF7;border:1px solid var(--line);color:var(--muted)}
+  .voice-card .lab{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;display:block}
+  .voice-card .si .lab{color:var(--iris-600)}
+
+  /* ========= ARIA ========= */
+  .aria-hero{background:linear-gradient(135deg,#0B0D12 0%,#1F1660 100%);color:var(--on-dark);border-radius:var(--r-lg);padding:56px;display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:center;position:relative;overflow:hidden}
+  @media (max-width:880px){.aria-hero{grid-template-columns:1fr;padding:36px}}
+  .aria-avatar{aspect-ratio:1;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;max-width:280px;margin:0 auto}
+  .aria-avatar svg{width:100%;height:100%}
+  .aria-hero h2{font-size:48px;letter-spacing:-0.03em;font-weight:400;color:#fff;line-height:1;margin:0}
+  .aria-hero h2 em{color:var(--iris-300);font-style:normal}
+  .aria-hero p{color:#C8CAD3;font-size:15.5px;line-height:1.55;margin:14px 0 0;max-width:48ch}
+  .aria-hero .role{display:inline-block;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--iris-300);margin-bottom:14px}
+
+  .rename-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px}
+  @media (max-width:760px){.rename-row{grid-template-columns:repeat(2,1fr)}}
+  .rename-card{background:#FAFAF7;border:1px solid var(--line);border-radius:var(--r-md);padding:24px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .rename-card .av{width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--c-light),var(--c-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:500;font-size:22px;letter-spacing:-0.02em}
+  .rename-card .ctx{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .rename-card h5{font-size:18px;letter-spacing:-0.015em;font-weight:600;margin:0}
+  .rename-card .role{font-size:12px;color:var(--muted);margin:0}
+
+  /* ========= TAGLINES ========= */
+  .tags{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
+  @media (max-width:760px){.tags{grid-template-columns:1fr}}
+  .tag-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:28px}
+  .tag-card.recommend{border:1.5px solid var(--iris-400);background:linear-gradient(180deg,#fff,var(--iris-50))}
+  .tag-card .ctx{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .tag-card .es{font-size:24px;letter-spacing:-0.02em;font-weight:500;line-height:1.18;margin:14px 0 6px;color:var(--ink)}
+  .tag-card .en{font-size:14.5px;color:var(--muted);font-style:italic}
+  .tag-card .note{font-size:13px;color:#3A3F4C;margin-top:18px;line-height:1.5;border-top:1px dashed var(--line);padding-top:14px}
+  .tag-card .rec-tag{display:inline-block;background:var(--ink);color:#fff;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:4px;margin-left:8px;vertical-align:middle}
+
+  /* ========= MANIFESTO ========= */
+  .manifesto{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:80px 56px;text-align:center;position:relative;overflow:hidden}
+  .manifesto::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at top,rgba(88,71,224,.22),transparent 60%);pointer-events:none}
+  .manifesto > *{position:relative}
+  .manifesto p{font-size:clamp(22px,3vw,36px);letter-spacing:-0.025em;font-weight:300;line-height:1.2;max-width:24ch;margin:0 auto}
+  .manifesto p + p{margin-top:28px}
+  .manifesto em{color:var(--iris-300);font-style:normal}
+  .manifesto .sig{margin-top:40px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-2)}
+
+  /* ========= WHITELABEL ========= */
+  .wl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+  @media (max-width:760px){.wl-grid{grid-template-columns:repeat(2,1fr)}}
+
+  /* ========= FAVICON ROW ========= */
+  .favs{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:24px}
+  @media (max-width:760px){.favs{grid-template-columns:repeat(2,1fr)}}
+  .fav-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:32px;display:flex;flex-direction:column;align-items:center;gap:12px}
+  .fav-card .lab{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+  /* ========= USAGE BLOCK ========= */
+  pre.code{background:var(--ink);color:#E8E7DF;border-radius:var(--r-md);padding:20px 22px;font-family:var(--font-mono);font-size:12.5px;line-height:1.55;overflow:auto;margin:0}
+  pre.code .c{color:#9D90FB}
+  pre.code .s{color:#FCD34D}
+  pre.code .k{color:#9D90FB}
+
+  /* ========= FOOTER ========= */
+  footer.foot{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+  footer.foot .row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  footer.foot strong{color:var(--ink)}
+
+</style>
+</head>
+<body>
+
+<!-- ============== TOPBAR ============== -->
+<header class="topbar">
+  <div class="wrap row">
+    <a class="tb-logo" href="#hero">
+      <svg viewBox="0 0 32 32" fill="none">
+        <path d="M16 4 Q16 13 24 13" stroke="#5847E0" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M28 16 Q19 16 19 24" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M16 28 Q16 19 8 19" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M4 16 Q13 16 13 8" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <circle cx="16" cy="16" r="3.2" fill="#5847E0"/>
+      </svg>
+      <span>Iris · Brand Book</span>
+    </a>
+    <nav class="tb-nav">
+      <a href="#why">Por qué</a>
+      <a href="#logo">Logo</a>
+      <a href="#color">Color</a>
+      <a href="#type">Tipo</a>
+      <a href="#icons">Iconos</a>
+      <a href="#motion">Motion</a>
+      <a href="#voice">Voz</a>
+      <a href="#aria">Aria</a>
+      <a href="#apply">Aplicar</a>
+    </nav>
+    <div class="tb-spacer"></div>
+    <div class="tb-meta">v1.0 · May 2026</div>
+  </div>
+</header>
+
+<!-- ============== HERO ============== -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Brand book · plataforma whitelabel</span>
+        <h1>La infraestructura del cuidado a <em>distancia</em>.</h1>
+        <p class="lead">Iris es la plataforma de telemedicina que vive arriba de Cerkana — y de cualquier clínica que llegue después. Una sola arquitectura. Muchas marcas. Un cuidado consistente.</p>
+        <div class="pills">
+          <span class="pill">Whitelabel SaaS</span>
+          <span class="pill">Multi-tenant</span>
+          <span class="pill">Centroamérica → LATAM</span>
+          <span class="pill">B2B · B2B2C</span>
+        </div>
+      </div>
+      <div class="hero-mark">
+        <svg class="iris-motion-draw loop" viewBox="0 0 220 220" fill="none" aria-label="Iris isotipo">
+          <path class="iris-petal iris-p1" d="M110 22 Q110 78 166 78" stroke="#9D90FB" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path class="iris-petal iris-p2" d="M198 110 Q142 110 142 166" stroke="#E8E7DF" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path class="iris-petal iris-p3" d="M110 198 Q110 142 54 142" stroke="#E8E7DF" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path class="iris-petal iris-p4" d="M22 110 Q78 110 78 54" stroke="#E8E7DF" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <circle class="iris-center" cx="110" cy="110" r="18" fill="#9D90FB"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== POR QUÉ ============== -->
+<section class="block" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>00 · La arquitectura paraguas</span>
+      <h2>Cerkana es <em>un cliente</em>, no el producto.</h2>
+      <p class="lead">Iris separa la plataforma del primer tenant — le da nombre propio, voz propia, y una identidad que sabe quedarse en segundo plano cuando el cliente quiere brillar.</p>
+    </div>
+
+    <div class="stack">
+      <div class="layer l-iris">
+        <span class="level">Plataforma</span>
+        <div>
+          <div class="name">Iris</div>
+          <div class="desc">Infraestructura, datos, IA core, módulos. Lo que nunca se whitelabelea.</div>
+        </div>
+        <span class="tag">B2B · superadmin</span>
+      </div>
+      <div class="layer l-tenant">
+        <span class="level">Tenant</span>
+        <div>
+          <div class="name">Cerkana &nbsp;·&nbsp; San Rafael &nbsp;·&nbsp; Dentaid &nbsp;·&nbsp; …</div>
+          <div class="desc">Branding, dominio, colores, módulos activos. Lo que el paciente final ve.</div>
+        </div>
+        <span class="tag">Whitelabel</span>
+      </div>
+      <div class="layer l-ai">
+        <span class="level">Asistente IA</span>
+        <div>
+          <div class="name">Aria <span class="muted" style="font-weight:400">(default)</span> · Lía (Cerkana) · Sara · Dani · …</div>
+          <div class="desc">El nombre cambia, el carácter se hereda de Iris. Tono cálido, claro, breve.</div>
+        </div>
+        <span class="tag">Per tenant</span>
+      </div>
+    </div>
+
+    <hr class="sep"/>
+
+    <span class="eyebrow"><span class="dot"></span>Las cuatro fuerzas que el logo equilibra</span>
+    <h3 style="margin-top:18px;max-width:22ch">Antes de dibujar, <em>nombrar</em>.</h3>
+
+    <div class="princ">
+      <div class="p-card">
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="2" stroke="#0B0D12" stroke-width="2"/><path d="M8 16 L14 22 L24 10" stroke="#5847E0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="name">01 · fuerza</div>
+        <h4>Tecnología</h4>
+        <p>Geometría exacta. Una marca infraestructural que se sostiene a 12px y a 12 metros. Sin gestos pintorescos.</p>
+      </div>
+      <div class="p-card">
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none"><path d="M16 26 C8 22 4 16 4 11 C4 7 7 5 10 5 C12 5 14 6 16 9 C18 6 20 5 22 5 C25 5 28 7 28 11 C28 16 24 22 16 26Z" fill="#5847E0"/></svg></div>
+        <div class="name">02 · fuerza</div>
+        <h4>Humanidad</h4>
+        <p>Esto es salud. Alguien que tiene miedo y alguien que sabe escuchar. El logo respira, vive, tiene calor.</p>
+      </div>
+      <div class="p-card">
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none"><path d="M4 22 Q16 4 28 22" stroke="#0B0D12" stroke-width="2.4" stroke-linecap="round" fill="none"/><circle cx="4" cy="22" r="3" fill="#0B0D12"/><circle cx="28" cy="22" r="3" fill="#5847E0"/></svg></div>
+        <div class="name">03 · fuerza</div>
+        <h4>Conexión</h4>
+        <p>Lo que el sistema hace: une dos puntos a distancia. Paciente↔médico, clínica↔gente, duda↔respuesta.</p>
+      </div>
+      <div class="p-card">
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="11" stroke="#0B0D12" stroke-width="2.2" fill="none"/><circle cx="16" cy="16" r="5" fill="#5847E0"/></svg></div>
+        <div class="name">04 · fuerza</div>
+        <h4>Whitelabel</h4>
+        <p>Iris es el container. La marca del tenant vive adentro. El logo tiene un "slot" que respira con el cliente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== LOGO ============== -->
+<section class="block cream" id="logo">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>01 · El isotipo</span>
+      <h2>Una <em>flor</em> hecha<br/>de cuatro <em>arcos</em>.</h2>
+      <p class="lead">Iris fue mensajera entre dioses y humanos — y le dio nombre a la flor de iris. Las dos formas (el arco que conecta, la flor que florece) están literalmente en el nombre. El isotipo es la unión: cuatro arcos rotados 90° alrededor de un centro vivo. Cada arco es una conexión que entra hacia el cuidado.</p>
+    </div>
+
+    <span class="mono">Variantes principales</span>
+    <div class="logo-grid" style="margin-top:18px">
+      <div class="logo-tile">
+        <svg class="iso" viewBox="0 0 220 220" fill="none">
+          <path d="M110 22 Q110 78 166 78" stroke="#5847E0" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M198 110 Q142 110 142 166" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M110 198 Q110 142 54 142" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M22 110 Q78 110 78 54" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <circle cx="110" cy="110" r="18" fill="#5847E0"/>
+        </svg>
+        <div class="caption">Marca paraguas · sobre claro</div>
+      </div>
+      <div class="logo-tile dark">
+        <svg class="iso" viewBox="0 0 220 220" fill="none">
+          <path d="M110 22 Q110 78 166 78" stroke="#9D90FB" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M198 110 Q142 110 142 166" stroke="#E8E7DF" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M110 198 Q110 142 54 142" stroke="#E8E7DF" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M22 110 Q78 110 78 54" stroke="#E8E7DF" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <circle cx="110" cy="110" r="18" fill="#9D90FB"/>
+        </svg>
+        <div class="caption">Sobre oscuro · iris-300 + on-dark</div>
+      </div>
+      <div class="logo-tile">
+        <svg class="iso" viewBox="0 0 220 220" fill="none" style="color:var(--ink)">
+          <path d="M110 22 Q110 78 166 78" stroke="currentColor" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M198 110 Q142 110 142 166" stroke="currentColor" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M110 198 Q110 142 54 142" stroke="currentColor" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M22 110 Q78 110 78 54" stroke="currentColor" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <circle cx="110" cy="110" r="18" fill="currentColor"/>
+        </svg>
+        <div class="caption">Monocromo · <code>currentColor</code></div>
+      </div>
+    </div>
+
+    <hr class="sep"/>
+
+    <span class="mono">Lockup · isotipo + wordmark</span>
+    <div class="grid c2" style="margin-top:18px">
+      <div class="card" style="padding:48px;display:flex;align-items:center;justify-content:center;gap:18px;min-height:160px">
+        <svg viewBox="0 0 32 32" fill="none" style="width:54px;height:54px">
+          <path d="M16 4 Q16 13 24 13" stroke="#5847E0" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M28 16 Q19 16 19 24" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M16 28 Q16 19 8 19" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M4 16 Q13 16 13 8" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <circle cx="16" cy="16" r="3.2" fill="#5847E0"/>
+        </svg>
+        <span style="font-weight:500;letter-spacing:-0.045em;font-size:48px">Iris</span>
+      </div>
+      <div class="card dark" style="padding:48px;display:flex;align-items:center;justify-content:center;gap:18px;min-height:160px">
+        <svg viewBox="0 0 32 32" fill="none" style="width:54px;height:54px">
+          <path d="M16 4 Q16 13 24 13" stroke="#9D90FB" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M28 16 Q19 16 19 24" stroke="#E8E7DF" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M16 28 Q16 19 8 19" stroke="#E8E7DF" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M4 16 Q13 16 13 8" stroke="#E8E7DF" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <circle cx="16" cy="16" r="3.2" fill="#9D90FB"/>
+        </svg>
+        <span style="font-weight:500;letter-spacing:-0.045em;font-size:48px;color:#E8E7DF">Iris</span>
+      </div>
+    </div>
+
+    <hr class="sep"/>
+
+    <span class="mono">Whitelabel · un isotipo, infinitas marcas</span>
+    <p class="lead" style="margin-top:14px">El pétalo superior + el centro heredan el color del tenant. La arquitectura nunca cambia.</p>
+    <div class="wl-grid">
+      <div class="logo-tile">
+        <svg class="iso" viewBox="0 0 220 220" fill="none">
+          <path d="M110 22 Q110 78 166 78" stroke="#5847E0" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M198 110 Q142 110 142 166" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M110 198 Q110 142 54 142" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M22 110 Q78 110 78 54" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <circle cx="110" cy="110" r="18" fill="#5847E0"/>
+        </svg>
+        <div class="caption">Iris · #5847E0</div>
+      </div>
+      <div class="logo-tile cerkana">
+        <svg class="iso" viewBox="0 0 220 220" fill="none">
+          <path d="M110 22 Q110 78 166 78" stroke="#0D9B8A" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M198 110 Q142 110 142 166" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M110 198 Q110 142 54 142" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M22 110 Q78 110 78 54" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <circle cx="110" cy="110" r="18" fill="#0D9B8A"/>
+        </svg>
+        <div class="caption">Cerkana · #0D9B8A</div>
+      </div>
+      <div class="logo-tile sanrafael">
+        <svg class="iso" viewBox="0 0 220 220" fill="none">
+          <path d="M110 22 Q110 78 166 78" stroke="#1E40AF" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M198 110 Q142 110 142 166" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M110 198 Q110 142 54 142" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M22 110 Q78 110 78 54" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <circle cx="110" cy="110" r="18" fill="#1E40AF"/>
+        </svg>
+        <div class="caption">San Rafael · #1E40AF</div>
+      </div>
+      <div class="logo-tile dentaid">
+        <svg class="iso" viewBox="0 0 220 220" fill="none">
+          <path d="M110 22 Q110 78 166 78" stroke="#B8860B" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M198 110 Q142 110 142 166" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M110 198 Q110 142 54 142" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <path d="M22 110 Q78 110 78 54" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+          <circle cx="110" cy="110" r="18" fill="#B8860B"/>
+        </svg>
+        <div class="caption">Dentaid · #B8860B</div>
+      </div>
+    </div>
+
+    <hr class="sep"/>
+
+    <span class="mono">Favicon · a 16px sigue siendo Iris</span>
+    <div class="favs">
+      <div class="fav-card">
+        <svg width="64" height="64" viewBox="0 0 32 32" fill="none" style="background:#FAFAF7;border-radius:8px;padding:8px">
+          <path d="M16 4 Q16 13 24 13" stroke="#5847E0" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M28 16 Q19 16 19 24" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M16 28 Q16 19 8 19" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M4 16 Q13 16 13 8" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <circle cx="16" cy="16" r="3.2" fill="#5847E0"/>
+        </svg>
+        <div class="lab">64px · default</div>
+      </div>
+      <div class="fav-card">
+        <svg width="48" height="48" viewBox="0 0 32 32" fill="none" style="background:#FAFAF7;border-radius:6px;padding:6px">
+          <path d="M16 4 Q16 13 24 13" stroke="#5847E0" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <path d="M28 16 Q19 16 19 24" stroke="#0B0D12" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <path d="M16 28 Q16 19 8 19" stroke="#0B0D12" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <path d="M4 16 Q13 16 13 8" stroke="#0B0D12" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div class="lab">32px · simplificado</div>
+      </div>
+      <div class="fav-card">
+        <svg width="64" height="64" viewBox="0 0 32 32" fill="none" style="background:#FAFAF7;border-radius:8px;padding:8px">
+          <path d="M16 4 Q16 13 24 13" stroke="#0D9B8A" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M28 16 Q19 16 19 24" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M16 28 Q16 19 8 19" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M4 16 Q13 16 13 8" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <circle cx="16" cy="16" r="3.2" fill="#0D9B8A"/>
+        </svg>
+        <div class="lab">64px · Cerkana</div>
+      </div>
+      <div class="fav-card">
+        <svg width="64" height="64" viewBox="0 0 32 32" fill="none" style="background:#0B0D12;border-radius:8px;padding:8px">
+          <path d="M16 4 Q16 13 24 13" stroke="#9D90FB" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M28 16 Q19 16 19 24" stroke="#E8E7DF" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M16 28 Q16 19 8 19" stroke="#E8E7DF" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M4 16 Q13 16 13 8" stroke="#E8E7DF" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <circle cx="16" cy="16" r="3.2" fill="#9D90FB"/>
+        </svg>
+        <div class="lab">64px · oscuro</div>
+      </div>
+      <div class="fav-card">
+        <svg width="20" height="20" viewBox="0 0 32 32" fill="none" style="background:#FAFAF7;border-radius:4px;padding:2px">
+          <path d="M16 4 Q16 13 24 13" stroke="#5847E0" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <path d="M28 16 Q19 16 19 24" stroke="#0B0D12" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <path d="M16 28 Q16 19 8 19" stroke="#0B0D12" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <path d="M4 16 Q13 16 13 8" stroke="#0B0D12" stroke-width="5" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div class="lab">16px · pestaña</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== COLOR ============== -->
+<section class="block" id="color">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>02 · Color</span>
+      <h2>Indigo de <em>infraestructura</em>,<br/>no de clínica.</h2>
+      <p class="lead">No es azul-clínico, ni verde-wellness, ni rojo-emergencia. Es indigo: el color de la noche de hospital, del iris floral, de la infraestructura que sostiene. Acompañado por un cálido ember que aparece solo cuando hay un punto humano que destacar.</p>
+    </div>
+
+    <div class="palette">
+      <div class="title">Iris · escala primaria</div>
+      <div class="sub">Indigo profundo. <code>--iris-500 #5847E0</code> es el primario.</div>
+      <div class="strip">
+        <div class="light-text" style="background:#F2F0FF">50</div>
+        <div class="light-text" style="background:#E2DEFF">100</div>
+        <div class="light-text" style="background:#C6BEFE">200</div>
+        <div style="background:#9D90FB">300</div>
+        <div style="background:#7868F2">400</div>
+        <div style="background:#5847E0">500</div>
+        <div style="background:#3F2EB8">600</div>
+        <div style="background:#2D1F8A">700</div>
+        <div style="background:#1F1660">800</div>
+        <div style="background:#110B3B">900</div>
+      </div>
+      <div class="swatch-row">
+        <div class="swatch dark" style="background:#5847E0"><div class="lbl"><span>Iris 500</span><span>#5847E0</span></div></div>
+        <div class="swatch dark" style="background:#0B0D12"><div class="lbl"><span>Ink</span><span>#0B0D12</span></div></div>
+        <div class="swatch dark" style="background:#E76A3E"><div class="lbl"><span>Ember</span><span>#E76A3E</span></div></div>
+        <div class="swatch light" style="background:#F7F6F2;border:1px solid var(--line-strong)"><div class="lbl"><span>Paper</span><span>#F7F6F2</span></div></div>
+      </div>
+    </div>
+
+    <hr class="sep"/>
+
+    <div class="grid c2">
+      <div>
+        <span class="mono">Cuándo blanco vs crema</span>
+        <h3 style="margin-top:14px">Dos fondos, dos voces.</h3>
+        <p class="muted" style="margin-top:14px;max-width:42ch">El producto y los docs viven en blanco puro. El brand book y las presentaciones viven en crema. Ambos son válidos — el crema es la voz pausada de Iris, el blanco es su voz operativa.</p>
+      </div>
+      <div class="grid c2">
+        <div class="card" style="background:#fff;padding:32px;display:flex;flex-direction:column;align-items:center;gap:14px">
+          <svg viewBox="0 0 32 32" fill="none" style="width:32px;height:32px">
+            <path d="M16 4 Q16 13 24 13" stroke="#5847E0" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M28 16 Q19 16 19 24" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M16 28 Q16 19 8 19" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M4 16 Q13 16 13 8" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <circle cx="16" cy="16" r="3.2" fill="#5847E0"/>
+          </svg>
+          <span class="mono">#FFFFFF · producto</span>
+        </div>
+        <div class="card" style="background:#F7F6F2;padding:32px;display:flex;flex-direction:column;align-items:center;gap:14px">
+          <svg viewBox="0 0 32 32" fill="none" style="width:32px;height:32px">
+            <path d="M16 4 Q16 13 24 13" stroke="#5847E0" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M28 16 Q19 16 19 24" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M16 28 Q16 19 8 19" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M4 16 Q13 16 13 8" stroke="#0B0D12" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <circle cx="16" cy="16" r="3.2" fill="#5847E0"/>
+          </svg>
+          <span class="mono">#F7F6F2 · brand</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== TIPOGRAFÍA ============== -->
+<section class="block cream" id="type">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>03 · Tipografía</span>
+      <h2>Inter para producto.<br/>Newsreader para los <em>momentos suaves</em>.</h2>
+      <p class="lead">Dos familias gratuitas, abiertas, con metrics modernos. Inter es la columna vertebral. Newsreader hace las pausas — manifiestos, citas, énfasis editorial. JetBrains Mono etiqueta lo técnico.</p>
+    </div>
+
+    <div class="type-sample dark" style="margin-bottom:16px">
+      <div class="t-meta" style="color:#9298A8">Display · Inter 500 + Newsreader italic</div>
+      <div class="t-display" style="color:#F2F1EA;margin-top:14px">Cuidado <em>cercano</em>,<br/>plataforma <em>común</em>.</div>
+    </div>
+
+    <div class="grid c2" style="margin-bottom:16px">
+      <div class="type-sample">
+        <div class="t-meta">H2 · Inter 500</div>
+        <div class="t-h2" style="margin-top:12px">Una receta firmada en menos de 90 segundos.</div>
+      </div>
+      <div class="type-sample">
+        <div class="t-meta">Editorial · Newsreader italic 500</div>
+        <div class="t-h2" style="margin-top:12px;font-family:var(--font-serif);font-style:italic">Lo que conecta a un médico con su paciente, eso es lo que cuidamos.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="t-row"><div class="key">Display</div><div style="font-size:36px;letter-spacing:-0.04em;font-weight:500">Inter 500 · 80–104 / -4%</div></div>
+      <div class="t-row"><div class="key">H1</div><div style="font-size:30px;letter-spacing:-0.03em;font-weight:500">Inter 500 · 48–72 / -3%</div></div>
+      <div class="t-row"><div class="key">H2</div><div style="font-size:26px;letter-spacing:-0.025em;font-weight:500">Inter 500 · 32–56 / -2.5%</div></div>
+      <div class="t-row"><div class="key">H3</div><div style="font-size:20px;letter-spacing:-0.015em;font-weight:600">Inter 600 · 22–28 / -1.5%</div></div>
+      <div class="t-row"><div class="key">Lead</div><div style="font-size:18px">Inter 400 · 19–22 · 1.45 lh</div></div>
+      <div class="t-row"><div class="key">Body</div><div>Inter 400 · 15 / 1.55 lh</div></div>
+      <div class="t-row"><div class="key">Eyebrow</div><div class="mono">JBM 500 · 10–11 · +14% tracking · UPPER</div></div>
+      <div class="t-row"><div class="key">Editorial</div><div style="font-family:var(--font-serif);font-style:italic;font-size:18px">Newsreader 500 italic · solo display + citas</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ICONOS ============== -->
+<section class="block" id="icons">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>04 · Iconos</span>
+      <h2>24 iconos <em>con firma</em>.</h2>
+      <p class="lead">Grilla 24×24, stroke 1.6, terminaciones round. Cada icono incorpora una de las dos firmas Iris — un cuarto de círculo (pétalo) o un punto indigo (#5847E0). La regla del uno: pétalo <strong>o</strong> dot, nunca los dos.</p>
+    </div>
+
+    <div class="icon-grid">
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M3 12 L7 12 L9 7 L13 17 L15 12 L21 12"/><circle cx="13" cy="17" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">latido</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21 a 8 8 0 0 1 16 0"/><circle cx="12" cy="8" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">paciente</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M12 3 L4 7 L4 13 a8 8 0 0 0 8 8 a8 8 0 0 0 8 -8 L20 7 Z"/><path d="M9 12 L11 14 L15 10"/><circle cx="15" cy="10" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">cuidado</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 9 L21 7 L21 17 L17 15Z"/><circle cx="10" cy="12" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">video</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 9 L20 9"/><path d="M8 3 L8 7"/><path d="M16 3 L16 7"/><circle cx="12" cy="14" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">agenda</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M21 15 a2 2 0 0 1 -2 2 H7 L3 21 V5 a2 2 0 0 1 2 -2 H19 a2 2 0 0 1 2 2 z"/><circle cx="9" cy="11" r="1.3" fill="#5847E0" stroke="none"/><circle cx="13" cy="11" r="0.9" fill="currentColor"/><circle cx="17" cy="11" r="0.9" fill="currentColor"/></svg><div class="lbl">chat</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8 L15 8"/><path d="M9 12 L15 12"/><path d="M9 16 L13 16"/><path d="M16 19 Q20 19 20 15" stroke-width="1.4"/></svg><div class="lbl">receta</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9 L21 9"/><path d="M9 3 L9 21"/><circle cx="15" cy="15" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">tablero</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M21 11.5 a8.38 8.38 0 0 1 -.9 3.8 a8.5 8.5 0 0 1 -7.6 4.7 a8.38 8.38 0 0 1 -3.8 -.9 L3 21 l1.9 -5.7 a8.38 8.38 0 0 1 -.9 -3.8 a8.5 8.5 0 0 1 4.7 -7.6 a8.38 8.38 0 0 1 3.8 -.9 h.5 a8.48 8.48 0 0 1 8 8 z"/><circle cx="12" cy="12" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">mensaje</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7 L12 12 L15 14"/><circle cx="12" cy="12" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">hora</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M22 16.92 v3 a2 2 0 0 1 -2.18 2 a19.79 19.79 0 0 1 -8.63 -3.07 a19.5 19.5 0 0 1 -6 -6 a19.79 19.79 0 0 1 -3.07 -8.67 A2 2 0 0 1 4.11 2 h3 a2 2 0 0 1 2 1.72 a12.84 12.84 0 0 0 .7 2.81 a2 2 0 0 1 -.45 2.11 L8.09 9.91 a16 16 0 0 0 6 6 l1.27 -1.27 a2 2 0 0 1 2.11 -.45 a12.84 12.84 0 0 0 2.81 .7 A2 2 0 0 1 22 16.92 z"/><circle cx="6" cy="6" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">llamada</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M21 15 V19 a2 2 0 0 1 -2 2 H5 a2 2 0 0 1 -2 -2 v -4"/><path d="M7 10 L12 15 L17 10"/><path d="M12 15 V3"/></svg><div class="lbl">descargar</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21 L16.65 16.65"/><circle cx="11" cy="11" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">buscar</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M22 11.08 V12 a10 10 0 1 1 -5.93 -9.14"/><path d="M22 4 L12 14.01 L9 11.01"/><circle cx="12" cy="14.01" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">confirmado</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M10.29 3.86 L1.82 18 a2 2 0 0 0 1.71 3 h16.94 a2 2 0 0 0 1.71 -3 L13.71 3.86 a2 2 0 0 0 -3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">alerta</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12 L11 15 L16 9"/><path d="M3 12 Q3 8 6 5" stroke-width="1.4" opacity="0.5"/></svg><div class="lbl">aprobado</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M3 18 v -6 a9 9 0 0 1 18 0 v6"/><path d="M21 19 a2 2 0 0 1 -2 2 h -1 v -6 h3z"/><path d="M3 19 a2 2 0 0 0 2 2 h1 v -6 H3z"/><circle cx="12" cy="12" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">soporte</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M20 21 v -2 a4 4 0 0 0 -4 -4 H8 a4 4 0 0 0 -4 4 v2"/><circle cx="12" cy="7" r="4"/><path d="M22 8 Q22 4 18 4" stroke-width="1.4" opacity="0.5"/><circle cx="12" cy="7" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">médico</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M3 21 V11 L12 4 L21 11 V21z"/><path d="M9 21 V14 H15 V21"/><circle cx="12" cy="9" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">clínica</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9 H15 V15 H9z" fill="#5847E0" stroke="none"/></svg><div class="lbl">tenant</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15 a1.65 1.65 0 0 0 .33 1.82 l.06 .06 a2 2 0 1 1 -2.83 2.83 l -.06 -.06 a1.65 1.65 0 0 0 -1.82 -.33 a1.65 1.65 0 0 0 -1 1.51 V21 a2 2 0 1 1 -4 0 v -.09 a1.65 1.65 0 0 0 -1 -1.51 a1.65 1.65 0 0 0 -1.82 .33 l -.06 .06 a2 2 0 1 1 -2.83 -2.83 l .06 -.06 a1.65 1.65 0 0 0 .33 -1.82 a1.65 1.65 0 0 0 -1.51 -1 H3 a2 2 0 1 1 0 -4 h .09 a1.65 1.65 0 0 0 1.51 -1 a1.65 1.65 0 0 0 -.33 -1.82 l -.06 -.06 a2 2 0 1 1 2.83 -2.83 l .06 .06 a1.65 1.65 0 0 0 1.82 .33 H9 a1.65 1.65 0 0 0 1 -1.51 V3 a2 2 0 1 1 4 0 v .09 a1.65 1.65 0 0 0 1 1.51 a1.65 1.65 0 0 0 1.82 -.33 l .06 -.06 a2 2 0 1 1 2.83 2.83 l -.06 .06 a1.65 1.65 0 0 0 -.33 1.82 V9 a1.65 1.65 0 0 0 1.51 1 H21 a2 2 0 1 1 0 4 h -.09 a1.65 1.65 0 0 0 -1.51 1z"/></svg><div class="lbl">config</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M9 11 L12 14 L22 4"/><path d="M21 12 v7 a2 2 0 0 1 -2 2 H5 a2 2 0 0 1 -2 -2 V5 a2 2 0 0 1 2 -2 h11"/><circle cx="12" cy="14" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">check</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M4 12 h4 l3 -8 l2 16 l3 -8 h4"/><circle cx="11" cy="4" r="1.3" fill="#5847E0" stroke="none"/></svg><div class="lbl">vitales</div></div>
+      <div class="icon-cell"><svg viewBox="0 0 32 32" style="stroke-width:3"><path d="M16 4 Q16 13 24 13"/><path d="M28 16 Q19 16 19 24"/><path d="M16 28 Q16 19 8 19"/><path d="M4 16 Q13 16 13 8"/><circle cx="16" cy="16" r="3.2" fill="#5847E0" stroke="none"/></svg><div class="lbl">iris</div></div>
+    </div>
+
+    <p class="muted" style="margin-top:24px;max-width:60ch;font-size:13.5px">
+      El sprite SVG con los 24 símbolos está en <code>icons/sprite.svg</code>.
+      Componente React tipado en <code>icons/IrisIcon.tsx</code>.
+      Listado completo con firmas en <code>icons/icon-manifest.json</code>.
+    </p>
+  </div>
+</section>
+
+<!-- ============== MOTION ============== -->
+<section class="block cream" id="motion">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>05 · Motion</span>
+      <h2>El logo, <em>respirando</em>.</h2>
+      <p class="lead">Seis estados, cada uno con un trabajo específico. Splash, idle, loading, transición whitelabel, signal de IA, marca viva. Todo SVG + CSS, sin JS. Respeta <code>prefers-reduced-motion</code>.</p>
+    </div>
+
+    <div class="motion-grid">
+      <!-- M1 -->
+      <div class="motion-cell">
+        <span class="num">M1 · splash</span>
+        <div class="stage">
+          <svg class="iris-motion-draw loop" viewBox="0 0 220 220" fill="none">
+            <path class="iris-petal iris-p1" d="M110 22 Q110 78 166 78" stroke="#5847E0" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <path class="iris-petal iris-p2" d="M198 110 Q142 110 142 166" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <path class="iris-petal iris-p3" d="M110 198 Q110 142 54 142" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <path class="iris-petal iris-p4" d="M22 110 Q78 110 78 54" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <circle class="iris-center" cx="110" cy="110" r="18" fill="#5847E0"/>
+          </svg>
+        </div>
+        <h4>Draw · la flor se forma</h4>
+        <p>Pétalos en cascada (300ms). Centro al final.</p>
+        <div class="meta">1.6s · ease-out · splash</div>
+      </div>
+      <!-- M2 -->
+      <div class="motion-cell dark">
+        <span class="num">M2 · idle</span>
+        <div class="stage">
+          <svg class="iris-motion-breath" viewBox="0 0 220 220" fill="none">
+            <g class="iris-grp">
+              <path d="M110 22 Q110 78 166 78" stroke="#9D90FB" stroke-width="16" stroke-linecap="round" fill="none"/>
+              <path d="M198 110 Q142 110 142 166" stroke="#E8E7DF" stroke-width="16" stroke-linecap="round" fill="none"/>
+              <path d="M110 198 Q110 142 54 142" stroke="#E8E7DF" stroke-width="16" stroke-linecap="round" fill="none"/>
+              <path d="M22 110 Q78 110 78 54" stroke="#E8E7DF" stroke-width="16" stroke-linecap="round" fill="none"/>
+            </g>
+            <circle class="iris-center" cx="110" cy="110" r="18" fill="#9D90FB"/>
+          </svg>
+        </div>
+        <h4>Breath · respira</h4>
+        <p>Escala ±6%. Sistema vivo sin agitar.</p>
+        <div class="meta">3.5s · loop · ease-in-out</div>
+      </div>
+      <!-- M3 -->
+      <div class="motion-cell">
+        <span class="num">M3 · loading</span>
+        <div class="stage">
+          <svg class="iris-motion-rotate" viewBox="0 0 220 220" fill="none">
+            <g class="iris-grp">
+              <path d="M110 22 Q110 78 166 78" stroke="#5847E0" stroke-width="16" stroke-linecap="round" fill="none"/>
+              <path d="M198 110 Q142 110 142 166" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+              <path d="M110 198 Q110 142 54 142" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+              <path d="M22 110 Q78 110 78 54" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+            </g>
+            <circle class="iris-center" cx="110" cy="110" r="18" fill="#5847E0"/>
+          </svg>
+        </div>
+        <h4>Rotate · lenta como reloj</h4>
+        <p>14s por vuelta. Procesos largos.</p>
+        <div class="meta">14s · linear · loop</div>
+      </div>
+      <!-- M4 -->
+      <div class="motion-cell">
+        <span class="num">M4 · pitch</span>
+        <div class="stage">
+          <svg class="iris-motion-whitelabel" viewBox="0 0 220 220" fill="none">
+            <path class="iris-p1" d="M110 22 Q110 78 166 78" stroke="#5847E0" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <path d="M198 110 Q142 110 142 166" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <path d="M110 198 Q110 142 54 142" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <path d="M22 110 Q78 110 78 54" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+            <circle class="iris-center" cx="110" cy="110" r="18" fill="#5847E0"/>
+          </svg>
+        </div>
+        <h4>Whitelabel · cicla tenants</h4>
+        <p>Iris → Cerkana → SR → Dentaid.</p>
+        <div class="meta">8s · loop · ease-in-out</div>
+      </div>
+      <!-- M5 -->
+      <div class="motion-cell">
+        <span class="num">M5 · Aria pensando</span>
+        <div class="stage">
+          <svg class="iris-motion-signal" viewBox="0 0 220 220" fill="none">
+            <path class="iris-petal iris-p1" d="M110 22 Q110 78 166 78" stroke="#5847E0" stroke-width="14" stroke-linecap="round" fill="none"/>
+            <path class="iris-petal iris-p2" d="M198 110 Q142 110 142 166" stroke="#5847E0" stroke-width="14" stroke-linecap="round" fill="none"/>
+            <path class="iris-petal iris-p3" d="M110 198 Q110 142 54 142" stroke="#5847E0" stroke-width="14" stroke-linecap="round" fill="none"/>
+            <path class="iris-petal iris-p4" d="M22 110 Q78 110 78 54" stroke="#5847E0" stroke-width="14" stroke-linecap="round" fill="none"/>
+            <circle class="iris-center" cx="110" cy="110" r="14" fill="#5847E0"/>
+          </svg>
+        </div>
+        <h4>Signal · IA procesando</h4>
+        <p>Cascada de 150ms + centro pulso.</p>
+        <div class="meta">2.2s · loop · linear</div>
+      </div>
+      <!-- M6 -->
+      <div class="motion-cell dark">
+        <span class="num">M6 · narrativo</span>
+        <div class="stage">
+          <svg class="iris-motion-orbit" viewBox="0 0 240 240" fill="none">
+            <circle class="iris-ring" cx="120" cy="120" r="100" stroke="rgba(157,144,251,.18)" stroke-width="1" fill="none" stroke-dasharray="3 6"/>
+            <g>
+              <path d="M120 38 Q120 90 170 90" stroke="#9D90FB" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <path d="M202 120 Q150 120 150 170" stroke="#E8E7DF" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <path d="M120 202 Q120 150 70 150" stroke="#E8E7DF" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <path d="M38 120 Q90 120 90 70" stroke="#E8E7DF" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <circle cx="120" cy="120" r="16" fill="#9D90FB"/>
+            </g>
+            <g class="iris-satellite"><circle cx="220" cy="120" r="5" fill="#9D90FB"/></g>
+          </svg>
+        </div>
+        <h4>Orbit · satélites</h4>
+        <p>Datos viajando. Solo narrativo.</p>
+        <div class="meta">6s · linear · explainer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== VOZ ============== -->
+<section class="block" id="voice">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>06 · Voz</span>
+      <h2>Iris <em>habla poco</em>,<br/>y casi siempre con verbo claro.</h2>
+      <p class="lead">La voz traduce las cuatro fuerzas del logo al lenguaje. Cuando hay conflicto entre dos atributos, gana el orden listado.</p>
+    </div>
+
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="num">01 · atributo</div>
+        <h4>Directa, no fría</h4>
+        <p>Frases cortas, verbos activos, sin jerga corporativa. Si hay duda entre claridad y calidez, gana la claridad — la calidez la pone Aria.</p>
+        <div class="pair">
+          <div class="si"><span class="lab">Sí</span>Tu consulta empieza en 5 minutos. Dr. Méndez te está esperando.</div>
+          <div class="no"><span class="lab">No</span>Estimado/a paciente, le informamos cordialmente que…</div>
+        </div>
+      </div>
+      <div class="voice-card">
+        <div class="num">02 · atributo</div>
+        <h4>Infraestructural, no protagónica</h4>
+        <p>Iris es la cañería, no la cocina. Hablamos del trabajo del médico y la tranquilidad del paciente. No celebramos la tecnología — la hacemos invisible.</p>
+        <div class="pair">
+          <div class="si"><span class="lab">Sí</span>La plataforma que tu clínica usa todos los días, sin que nadie la note.</div>
+          <div class="no"><span class="lab">No</span>Iris revoluciona la telemedicina con IA de última generación.</div>
+        </div>
+      </div>
+      <div class="voice-card">
+        <div class="num">03 · atributo</div>
+        <h4>Humana, no condescendiente</h4>
+        <p>Tratamos al usuario como adulto. Sin diminutivos, sin "¡no te preocupes!". Cuando hay un error, lo decimos y proponemos la salida.</p>
+        <div class="pair">
+          <div class="si"><span class="lab">Sí</span>Algo se rompió de nuestro lado. Te avisamos cuando vuelva a funcionar.</div>
+          <div class="no"><span class="lab">No</span>¡Ups! Algo salió mal :( Inténtalo de nuevo más tarde porfa.</div>
+        </div>
+      </div>
+      <div class="voice-card">
+        <div class="num">04 · atributo</div>
+        <h4>Bilingüe, sin ser inglesa</h4>
+        <p>Default español rioplatense neutro. El inglés aparece donde Iris habla al mundo (taglines secundarias, docs técnicas). Nunca mezclamos en la misma frase.</p>
+        <div class="pair">
+          <div class="si"><span class="lab">Sí</span>Plataforma de telemedicina. <em>Care infrastructure for clinics.</em></div>
+          <div class="no"><span class="lab">No</span>La plataforma all-in-one para hacer scale tu workflow médico.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== MANIFIESTO + TAGLINES ============== -->
+<section class="block cream">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>07 · Manifiesto</span>
+    <h2 style="margin-top:18px;max-width:22ch">Lo que <em>defendemos</em>.</h2>
+
+    <div class="manifesto" style="margin-top:32px">
+      <p>El cuidado no debería depender de la <em>geografía</em>.</p>
+      <p>Construimos la infraestructura que hace<br/>que un médico esté <em>donde se lo necesita</em>.</p>
+      <p>No reemplazamos a nadie. <em>Sostenemos a todos</em>.</p>
+      <p>Somos invisibles cuando <em>funciona</em>.<br/>Somos responsables cuando <em>no</em>.</p>
+      <div class="sig">— Iris · plataforma whitelabel de telemedicina</div>
+    </div>
+
+    <hr class="sep"/>
+
+    <span class="eyebrow"><span class="dot"></span>08 · Taglines · ES principal · EN secundario</span>
+    <h3 style="margin-top:14px;max-width:22ch">Cuatro maneras de <em>decirlo en una línea</em>.</h3>
+
+    <div class="tags">
+      <div class="tag-card recommend">
+        <div class="ctx">01 · Hero del sitio<span class="rec-tag">Recomendada</span></div>
+        <div class="es">La infraestructura del cuidado a distancia.</div>
+        <div class="en"><em>Infrastructure for care, wherever it's needed.</em></div>
+        <div class="note">La más Iris: nombra lo que somos (infraestructura), lo que resolvemos (cuidado a distancia), sin venderlo como milagro. Hero, firma, descripción de 1 línea ante cualquier audiencia.</div>
+      </div>
+      <div class="tag-card">
+        <div class="ctx">02 · Pitch a clínicas (B2B)</div>
+        <div class="es">La plataforma que tu clínica usa todos los días.<br/>Sin que nadie la note.</div>
+        <div class="en"><em>The platform your clinic runs on. Quietly.</em></div>
+        <div class="note">Vende whitelabel sin nombrarlo. Para landing dedicada a directores médicos.</div>
+      </div>
+      <div class="tag-card">
+        <div class="ctx">03 · Mitología · audiencia cálida</div>
+        <div class="es">Iris fue la mensajera entre mundos.<br/>Nosotros también.</div>
+        <div class="en"><em>Iris carried messages between worlds. So do we.</em></div>
+        <div class="note">About page, deck a inversores, video de marca. Tono literario.</div>
+      </div>
+      <div class="tag-card">
+        <div class="ctx">04 · Técnica · footer / docs</div>
+        <div class="es">Telemedicina, multi-tenant, lista para tu marca.</div>
+        <div class="en"><em>Multi-tenant telemedicine, white-labeled.</em></div>
+        <div class="note">Footer, pricing, hover-states. No es bonita — es útil.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ARIA ============== -->
+<section class="block" id="aria">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>09 · Aria</span>
+      <h2>Conocé a <em>Aria</em>.</h2>
+      <p class="lead">Iris es la plataforma; Aria es su voz. La IA que escucha al paciente antes que el médico, que prepara la consulta, que recuerda lo que vino después. Renombrable por tenant — la personalidad la define Iris.</p>
+    </div>
+
+    <div class="aria-hero">
+      <div class="aria-avatar">
+        <svg viewBox="0 0 220 220" fill="none">
+          <defs>
+            <radialGradient id="ariaGrad" cx="40%" cy="40%">
+              <stop offset="0%" stop-color="#C6BEFE"/>
+              <stop offset="60%" stop-color="#7868F2"/>
+              <stop offset="100%" stop-color="#2D1F8A"/>
+            </radialGradient>
+          </defs>
+          <circle cx="110" cy="110" r="80" fill="url(#ariaGrad)"/>
+          <g opacity="0.9">
+            <path d="M110 50 Q110 80 138 80" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <path d="M170 110 Q140 110 140 138" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.6"/>
+            <path d="M110 170 Q110 140 82 140" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.6"/>
+            <path d="M50 110 Q80 110 80 82" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.6"/>
+            <circle cx="110" cy="110" r="8" fill="#fff"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <span class="role">Asistente · IA · Iris</span>
+        <h2>Aria</h2>
+        <p>Del italiano "aire" y del griego "canción". Es la voz que escucha primero, ordena lo que el paciente cuenta, y se lo entrega al médico ya estructurado. <strong style="color:#fff">No diagnostica. No reemplaza. Acompaña.</strong></p>
+      </div>
+    </div>
+
+    <div class="grid c3" style="margin-top:32px">
+      <div class="card">
+        <div class="num">01 · tono</div>
+        <h4>Atenta, no servil</h4>
+        <p class="p" style="margin-top:8px">Habla como una buena recepcionista médica con 20 años de oficio. Confiada, eficiente, cero adornos. Nunca dice "por supuesto" tres veces seguidas.</p>
+      </div>
+      <div class="card">
+        <div class="num">02 · límite</div>
+        <h4>Sabe cuándo callarse</h4>
+        <p class="p" style="margin-top:8px">Sintetiza, no opina. Si está fuera de su alcance, lo dice y deriva al humano. Nunca finge saber lo que no sabe.</p>
+      </div>
+      <div class="card">
+        <div class="num">03 · memoria</div>
+        <h4>Recuerda lo que importa</h4>
+        <p class="p" style="margin-top:8px">Sabe que el paciente Méndez prefiere ser llamado por teléfono. Sabe que la Dra. Soria no consulta antes de las 9. Detalles que hacen el trabajo más humano.</p>
+      </div>
+    </div>
+
+    <hr class="sep"/>
+
+    <span class="eyebrow"><span class="dot"></span>Aria renombrada por tenant · un alma, muchas máscaras</span>
+    <p class="muted" style="margin-top:14px;max-width:640px">El nombre cambia, el avatar adopta el color del tenant, la personalidad se mantiene. Eso es el whitelabel haciéndose cargo del producto sin perder calidad.</p>
+
+    <div class="rename-row">
+      <div class="rename-card" style="--c-light:#9D90FB;--c-dark:#3F2EB8">
+        <div class="av">A</div>
+        <div class="ctx">Default · Iris</div>
+        <h5>Aria</h5>
+        <p class="role">"aire / canción"</p>
+      </div>
+      <div class="rename-card" style="--c-light:#5EEAD4;--c-dark:#0F766E">
+        <div class="av">L</div>
+        <div class="ctx">Cerkana</div>
+        <h5>Lía</h5>
+        <p class="role">"la que escucha"</p>
+      </div>
+      <div class="rename-card" style="--c-light:#93C5FD;--c-dark:#1E40AF">
+        <div class="av">S</div>
+        <div class="ctx">San Rafael</div>
+        <h5>Sara</h5>
+        <p class="role">"princesa, cuidadora"</p>
+      </div>
+      <div class="rename-card" style="--c-light:#FCD34D;--c-dark:#B8860B">
+        <div class="av">D</div>
+        <div class="ctx">Dentaid</div>
+        <h5>Dani</h5>
+        <p class="role">"el / la que asiste"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== APLICAR ============== -->
+<section class="block cream" id="apply">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>10 · Aplicar el branding</span>
+      <h2>Cómo <em>cargar Iris</em> a la app.</h2>
+      <p class="lead">Todos los assets están en esta misma carpeta. Lo que sigue es un mapa rápido de qué archivo va dónde.</p>
+    </div>
+
+    <div class="grid c2">
+      <div class="card">
+        <div class="num">A · tokens CSS</div>
+        <h4>Variables de color, tipo, radio, sombra</h4>
+        <p class="p" style="margin-top:10px">Copiá <code>tokens/iris-tokens.css</code> a tu <code>public/</code> y enlazalo en el head.</p>
+<pre class="code" style="margin-top:14px"><span class="c">/* en tu HTML */</span>
+&lt;link rel="stylesheet" href="/iris-tokens.css"&gt;
+
+<span class="c">/* en tu CSS */</span>
+.btn { background: <span class="k">var</span>(--iris-500); }
+.card { border-radius: <span class="k">var</span>(--r-md); }</pre>
+      </div>
+
+      <div class="card">
+        <div class="num">B · favicon</div>
+        <h4>SVG vectorial + PNG fallback</h4>
+        <p class="p" style="margin-top:10px">Copiá los 4 archivos de <code>favicon/</code> y pegá el snippet del <code>favicon-snippet.html</code> en el head.</p>
+<pre class="code" style="margin-top:14px">&lt;link rel="icon" type="image/svg+xml" href="/favicon.svg"&gt;
+&lt;link rel="icon" sizes="32x32" href="/favicon-32.png"&gt;
+&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;
+&lt;meta name="theme-color" content=<span class="s">"#5847E0"</span>&gt;</pre>
+      </div>
+
+      <div class="card">
+        <div class="num">C · iconos</div>
+        <h4>Sprite + componente React</h4>
+        <p class="p" style="margin-top:10px">Copiá <code>icons/sprite.svg</code> al <code>public/</code> e importá <code>icons/IrisIcon.tsx</code>.</p>
+<pre class="code" style="margin-top:14px"><span class="k">import</span> { IrisIcon } <span class="k">from</span> <span class="s">"@/components/IrisIcon"</span>;
+
+&lt;IrisIcon name=<span class="s">"latido"</span> size={24} /&gt;
+&lt;IrisIcon name=<span class="s">"agenda"</span> className=<span class="s">"text-iris-600"</span> /&gt;</pre>
+      </div>
+
+      <div class="card">
+        <div class="num">D · motion</div>
+        <h4>6 animaciones del isotipo</h4>
+        <p class="p" style="margin-top:10px">Importá <code>motion/iris-motion.css</code> y aplicá la clase al SVG del logo.</p>
+<pre class="code" style="margin-top:14px">&lt;link rel="stylesheet" href="/iris-motion.css"&gt;
+
+&lt;svg class=<span class="s">"iris-motion-draw"</span> viewBox=<span class="s">"0 0 220 220"</span>&gt;
+  &lt;path class=<span class="s">"iris-petal iris-p1"</span> ... /&gt;
+  &lt;circle class=<span class="s">"iris-center"</span> ... /&gt;
+&lt;/svg&gt;</pre>
+      </div>
+
+      <div class="card">
+        <div class="num">E · whitelabel por tenant</div>
+        <h4>Setear <code>data-tenant</code> en <code>&lt;html&gt;</code></h4>
+        <p class="p" style="margin-top:10px">Los tokens ya manejan el override. El pétalo superior + el centro heredan el color del cliente.</p>
+<pre class="code" style="margin-top:14px">&lt;html data-tenant=<span class="s">"cerkana"</span>&gt;
+  <span class="c">// --iris-tenant-color → #0D9B8A</span>
+&lt;/html&gt;
+
+&lt;html data-tenant=<span class="s">"sanrafael"</span>&gt;
+  <span class="c">// --iris-tenant-color → #1E40AF</span>
+&lt;/html&gt;</pre>
+      </div>
+
+      <div class="card">
+        <div class="num">F · voz · Aria</div>
+        <h4>Markdown operativo</h4>
+        <p class="p" style="margin-top:10px">Para system prompts, copy de marketing y micro-copy del producto. Reglas completas en <code>voice/iris-voice-guidelines.md</code>.</p>
+        <ul class="p" style="margin-top:10px;line-height:1.7">
+          <li>Voz: directa · infraestructural · humana · bilingüe.</li>
+          <li>Tagline principal: "La infraestructura del cuidado a distancia."</li>
+          <li>Aria: atenta · sabe callarse · recuerda.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CIERRE ============== -->
+<section class="block dark tight">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>Estado · listo para construir</span>
+    <h2 style="margin-top:18px;max-width:22ch">El brand está <em>cerrado</em>.</h2>
+    <p class="lead" style="margin-top:18px;max-width:640px">Logo (estático + 6 motion), paleta, tipografía, 24 iconos con firma, voz, manifiesto, taglines ES/EN, Aria. Lo que sigue es construir el producto.</p>
+
+    <div class="grid c3" style="margin-top:32px">
+      <div class="card dark"><div class="num" style="color:var(--iris-300)">A</div><div class="h">Site iris.health</div><div class="p">Landing comercial con motion M4 en hero. Tres direcciones exploradas en archivo aparte.</div></div>
+      <div class="card dark"><div class="num" style="color:var(--iris-300)">B</div><div class="h">Deck inversores</div><div class="p">10–12 slides con historia, sistema, casos, roadmap.</div></div>
+      <div class="card dark"><div class="num" style="color:var(--iris-300)">C</div><div class="h">Onboarding tenant</div><div class="p">Wizard de "firma de contrato" a "primer paciente atendido".</div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap row">
+    <div style="display:flex;align-items:center;gap:10px">
+      <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+        <path d="M16 4 Q16 13 24 13" stroke="#5847E0" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M28 16 Q19 16 19 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M16 28 Q16 19 8 19" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M4 16 Q13 16 13 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <circle cx="16" cy="16" r="3.2" fill="#5847E0"/>
+      </svg>
+      <strong>Iris · Brand Book v1.0</strong>
+    </div>
+    <div class="mono">La infraestructura del cuidado a distancia · 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>

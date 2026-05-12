@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 100" fill="none" role="img" aria-label="Iris lockup">
+  <title>Iris</title>
+  <!-- Isotipo · 80×80 -->
+  <g transform="translate(0,10) scale(0.3636)">
+    <path d="M110 22 Q110 78 166 78" stroke="#5847E0" stroke-width="16" stroke-linecap="round" fill="none"/>
+    <path d="M198 110 Q142 110 142 166" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+    <path d="M110 198 Q110 142 54 142" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+    <path d="M22 110 Q78 110 78 54" stroke="#0B0D12" stroke-width="16" stroke-linecap="round" fill="none"/>
+    <circle cx="110" cy="110" r="18" fill="#5847E0"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="100" y="68"
+        font-family="Inter, -apple-system, 'Helvetica Neue', sans-serif"
+        font-weight="500" font-size="64"
+        letter-spacing="-2.88"
+        fill="#0B0D12">Iris</text>
+</svg>
