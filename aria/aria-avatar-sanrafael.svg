@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" role="img" aria-label="Sara · asistente IA · San Rafael">
+  <title>Sara · San Rafael</title>
+  <defs>
+    <radialGradient id="s-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#93C5FD" stop-opacity="0.35"/>
+      <stop offset="55%"  stop-color="#1E40AF" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#1E40AF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="s-body" cx="38%" cy="32%" r="72%">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="14%"  stop-color="#DBE5FE"/>
+      <stop offset="36%"  stop-color="#93C5FD"/>
+      <stop offset="60%"  stop-color="#3B82F6"/>
+      <stop offset="84%"  stop-color="#1E40AF"/>
+      <stop offset="100%" stop-color="#0A1633"/>
+    </radialGradient>
+    <radialGradient id="s-spec" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.72"/>
+      <stop offset="55%"  stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="s-shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#050D26" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#050D26" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="s-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="55%"  stop-color="#F0F6FF"/>
+      <stop offset="100%" stop-color="#BFD7FE"/>
+    </radialGradient>
+    <clipPath id="s-clip"><circle cx="140" cy="140" r="100"/></clipPath>
+    <filter id="s-glow-f" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3.2"/></filter>
+  </defs>
+  <circle cx="140" cy="140" r="130" fill="url(#s-glow)"/>
+  <circle cx="140" cy="140" r="100" fill="url(#s-body)"/>
+  <g clip-path="url(#s-clip)" opacity="0.17" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" fill="none">
+    <line x1="140" y1="140" x2="140" y2="40"/><line x1="140" y1="140" x2="190" y2="53.4"/>
+    <line x1="140" y1="140" x2="226.6" y2="90"/><line x1="140" y1="140" x2="240" y2="140"/>
+    <line x1="140" y1="140" x2="226.6" y2="190"/><line x1="140" y1="140" x2="190" y2="226.6"/>
+    <line x1="140" y1="140" x2="140" y2="240"/><line x1="140" y1="140" x2="90" y2="226.6"/>
+    <line x1="140" y1="140" x2="53.4" y2="190"/><line x1="140" y1="140" x2="40" y2="140"/>
+    <line x1="140" y1="140" x2="53.4" y2="90"/><line x1="140" y1="140" x2="90" y2="53.4"/>
+  </g>
+  <g clip-path="url(#s-clip)"><ellipse cx="186" cy="200" rx="80" ry="64" fill="url(#s-shadow)" transform="rotate(-25 186 200)"/></g>
+  <g clip-path="url(#s-clip)"><ellipse cx="104" cy="88" rx="44" ry="28" fill="url(#s-spec)" transform="rotate(-30 104 88)"/></g>
+  <path d="M140 82.8 Q140 119.2 176.4 119.2" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.45" filter="url(#s-glow-f)"/>
+  <g stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.62">
+    <path d="M197.2 140 Q160.8 140 160.8 176.4"/>
+    <path d="M140 197.2 Q140 160.8 103.6 160.8"/>
+    <path d="M82.8 140 Q119.2 140 119.2 103.6"/>
+  </g>
+  <path d="M140 82.8 Q140 119.2 176.4 119.2" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <circle cx="140" cy="140" r="12" fill="url(#s-core)"/>
+  <circle cx="138" cy="138" r="4" fill="#FFFFFF" opacity="0.95"/>
+</svg>

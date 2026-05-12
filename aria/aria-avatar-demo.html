@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aria · avatar refinado (Nivel A)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../tokens/iris-tokens.css" />
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--font-sans);background:var(--paper);color:var(--ink);padding:64px 32px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1100px;margin:0 auto}
+  header{margin-bottom:48px}
+  .eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--iris-600)}
+  h1{font-size:48px;letter-spacing:-0.035em;font-weight:500;margin:10px 0 12px}
+  h1 em{color:var(--iris-600);font-style:normal}
+  .sub{color:#3A3F4C;font-size:16px;line-height:1.55;max-width:60ch;margin:0}
+
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+  @media (max-width:760px){.compare{grid-template-columns:1fr}}
+  .cell{background:linear-gradient(135deg,#0B0D12 0%,#1F1660 100%);color:#fff;border-radius:24px;padding:48px;display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;overflow:hidden}
+  .cell::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 80%,rgba(88,71,224,.18),transparent 60%);pointer-events:none}
+  .cell > *{position:relative}
+  .cell img{width:200px;height:200px}
+  .num{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9D90FB;position:absolute;top:18px;left:18px}
+  .cell h2{font-size:32px;font-weight:500;margin:0;letter-spacing:-0.025em;color:#fff}
+  .cell .role{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9D90FB}
+  .cell .ctx{font-size:13px;color:#C8CAD3;margin-top:6px}
+
+  .row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+  @media (max-width:760px){.row{grid-template-columns:repeat(2,1fr)}}
+  .tile{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;align-items:center;gap:12px}
+  .tile img{width:120px;height:120px}
+  .tile .nm{font-size:18px;font-weight:600;letter-spacing:-0.015em;margin:0}
+  .tile .tn{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .tile .hex{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+
+  .anatomy{margin-top:64px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:40px}
+  .anatomy h3{font-size:22px;letter-spacing:-0.02em;font-weight:600;margin:0 0 8px}
+  .anatomy p{color:var(--muted);font-size:14px;margin:0 0 20px;max-width:60ch}
+  .layers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  @media (max-width:760px){.layers{grid-template-columns:1fr 1fr}}
+  .layer{background:#FAFAF7;border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:6px}
+  .layer .n{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.14em;color:var(--iris-600);text-transform:uppercase}
+  .layer .ttl{font-size:14px;font-weight:600;letter-spacing:-0.005em}
+  .layer .ds{font-size:12.5px;color:var(--muted);line-height:1.4}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Nivel A · orb refinado</span>
+    <h1>Aria · avatar <em>refinado</em>.</h1>
+    <p class="sub">Mismo concepto que la versión anterior (orb con el isotipo Iris) pero con seis capas: halo ambiente, esfera con gradiente extendido, estrías de iris floral, sombra esférica, specular highlight y pétalo primario con glow. La identidad de Iris se mantiene; gana profundidad y presencia.</p>
+  </header>
+
+  <div class="compare">
+    <div class="cell">
+      <span class="num">Antes · v1</span>
+      <svg viewBox="0 0 220 220" fill="none" style="width:200px;height:200px">
+        <defs>
+          <radialGradient id="oldGrad" cx="40%" cy="40%">
+            <stop offset="0%" stop-color="#C6BEFE"/>
+            <stop offset="60%" stop-color="#7868F2"/>
+            <stop offset="100%" stop-color="#2D1F8A"/>
+          </radialGradient>
+        </defs>
+        <circle cx="110" cy="110" r="80" fill="url(#oldGrad)"/>
+        <g opacity="0.9">
+          <path d="M110 50 Q110 80 138 80" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <path d="M170 110 Q140 110 140 138" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.6"/>
+          <path d="M110 170 Q110 140 82 140" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.6"/>
+          <path d="M50 110 Q80 110 80 82" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.6"/>
+          <circle cx="110" cy="110" r="8" fill="#fff"/>
+        </g>
+      </svg>
+      <h2>Aria · v1</h2>
+      <span class="role">Plano · gradiente simple</span>
+      <span class="ctx">3 capas · isotipo en blanco al 60%</span>
+    </div>
+    <div class="cell">
+      <span class="num">Después · refined</span>
+      <img src="aria-avatar.svg" alt="Aria refined">
+      <h2>Aria · refined</h2>
+      <span class="role">Profundidad · iris floral</span>
+      <span class="ctx">6 capas · pétalo primario glow · core hot</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="tile">
+      <img src="aria-avatar.svg" alt="Aria">
+      <div class="nm">Aria</div>
+      <div class="tn">Iris · default</div>
+      <div class="hex">#5847E0</div>
+    </div>
+    <div class="tile">
+      <img src="aria-avatar-cerkana.svg" alt="Lía">
+      <div class="nm">Lía</div>
+      <div class="tn">Cerkana</div>
+      <div class="hex">#0D9B8A</div>
+    </div>
+    <div class="tile">
+      <img src="aria-avatar-sanrafael.svg" alt="Sara">
+      <div class="nm">Sara</div>
+      <div class="tn">San Rafael</div>
+      <div class="hex">#1E40AF</div>
+    </div>
+    <div class="tile">
+      <img src="aria-avatar-dentaid.svg" alt="Dani">
+      <div class="nm">Dani</div>
+      <div class="tn">Dentaid</div>
+      <div class="hex">#B8860B</div>
+    </div>
+  </div>
+
+  <div class="anatomy">
+    <h3>Anatomía del orb</h3>
+    <p>Seis capas, todas vectoriales (~2 KB). Sin JS. Lista para usar como <code>&lt;img&gt;</code>, inline SVG o como background.</p>
+    <div class="layers">
+      <div class="layer"><span class="n">0 · halo</span><span class="ttl">Ambient glow</span><span class="ds">Radial purple soft fuera de la esfera. Integra con fondos oscuros.</span></div>
+      <div class="layer"><span class="n">1 · esfera</span><span class="ttl">Body gradient</span><span class="ds">6 stops: white → iris-100 → 300 → 500 → 700 → 900. Da volumen.</span></div>
+      <div class="layer"><span class="n">2 · iris floral</span><span class="ttl">Striations</span><span class="ds">12 líneas radiales blancas al 17% que evocan el iris del ojo.</span></div>
+      <div class="layer"><span class="n">3 · sombra</span><span class="ttl">Bottom-right shadow</span><span class="ds">Elipse oscura difusa que da curvatura esférica real.</span></div>
+      <div class="layer"><span class="n">4 · highlight</span><span class="ttl">Specular glass</span><span class="ds">Elipse blanca al 72% top-left. Calidad de canica / vidrio.</span></div>
+      <div class="layer"><span class="n">5 · isotipo</span><span class="ttl">4 pétalos blancos</span><span class="ds">El primario glow (Gaussian blur). Los otros 3 al 62% opacidad.</span></div>
+      <div class="layer"><span class="n">6 · núcleo</span><span class="ttl">Hot core</span><span class="ds">Círculo central con gradiente cálido + dot brillante off-center.</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

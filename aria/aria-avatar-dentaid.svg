@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" role="img" aria-label="Dani · asistente IA · Dentaid">
+  <title>Dani · Dentaid</title>
+  <defs>
+    <radialGradient id="d-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#FCD34D" stop-opacity="0.35"/>
+      <stop offset="55%"  stop-color="#B8860B" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#B8860B" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="d-body" cx="38%" cy="32%" r="72%">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="14%"  stop-color="#FEF3C7"/>
+      <stop offset="36%"  stop-color="#FCD34D"/>
+      <stop offset="60%"  stop-color="#D97706"/>
+      <stop offset="84%"  stop-color="#78350F"/>
+      <stop offset="100%" stop-color="#2D1605"/>
+    </radialGradient>
+    <radialGradient id="d-spec" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.72"/>
+      <stop offset="55%"  stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="d-shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#1F0B02" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#1F0B02" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="d-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="55%"  stop-color="#FEFBEC"/>
+      <stop offset="100%" stop-color="#FDE48A"/>
+    </radialGradient>
+    <clipPath id="d-clip"><circle cx="140" cy="140" r="100"/></clipPath>
+    <filter id="d-glow-f" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3.2"/></filter>
+  </defs>
+  <circle cx="140" cy="140" r="130" fill="url(#d-glow)"/>
+  <circle cx="140" cy="140" r="100" fill="url(#d-body)"/>
+  <g clip-path="url(#d-clip)" opacity="0.17" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" fill="none">
+    <line x1="140" y1="140" x2="140" y2="40"/><line x1="140" y1="140" x2="190" y2="53.4"/>
+    <line x1="140" y1="140" x2="226.6" y2="90"/><line x1="140" y1="140" x2="240" y2="140"/>
+    <line x1="140" y1="140" x2="226.6" y2="190"/><line x1="140" y1="140" x2="190" y2="226.6"/>
+    <line x1="140" y1="140" x2="140" y2="240"/><line x1="140" y1="140" x2="90" y2="226.6"/>
+    <line x1="140" y1="140" x2="53.4" y2="190"/><line x1="140" y1="140" x2="40" y2="140"/>
+    <line x1="140" y1="140" x2="53.4" y2="90"/><line x1="140" y1="140" x2="90" y2="53.4"/>
+  </g>
+  <g clip-path="url(#d-clip)"><ellipse cx="186" cy="200" rx="80" ry="64" fill="url(#d-shadow)" transform="rotate(-25 186 200)"/></g>
+  <g clip-path="url(#d-clip)"><ellipse cx="104" cy="88" rx="44" ry="28" fill="url(#d-spec)" transform="rotate(-30 104 88)"/></g>
+  <path d="M140 82.8 Q140 119.2 176.4 119.2" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.45" filter="url(#d-glow-f)"/>
+  <g stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.62">
+    <path d="M197.2 140 Q160.8 140 160.8 176.4"/>
+    <path d="M140 197.2 Q140 160.8 103.6 160.8"/>
+    <path d="M82.8 140 Q119.2 140 119.2 103.6"/>
+  </g>
+  <path d="M140 82.8 Q140 119.2 176.4 119.2" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <circle cx="140" cy="140" r="12" fill="url(#d-core)"/>
+  <circle cx="138" cy="138" r="4" fill="#FFFFFF" opacity="0.95"/>
+</svg>
